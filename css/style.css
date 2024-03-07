@@ -166,3 +166,54 @@ p {
     height: auto; 
      
 }
+
+/*--Men Collection--*/
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 20px; 
+    background-color: #f0f0f0; 
+    padding: 20px; 
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-bottom: 50px;
+}
+
+.grid-item {
+    text-align: center;
+    width: 100%;
+}
+
+.grid-item img {
+    height: 400px; 
+    object-fit: cover;
+}
+
+.jacket-name {
+    font-weight: bold;
+    margin-top: 10px;
+    font-family:"Karla", sans-serif;
+}
+
+.price {
+    color: #666; 
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid black ;
+    font-size: 30px;
+    font-family:"Karla", sans-serif ;
+}
+@media (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; 
+    }
+}
