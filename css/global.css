@@ -295,28 +295,6 @@ padding: 15px;
       
     }
     
-
-  
-  @media screen and (max-width: 280px) {
-    #main-header {
-      position: static; 
-    }
-      img.explore-banner {
-        height: auto;
-        margin-top: 0px;
-    }
-      img.image-banner{
-        padding: 0px;
-      }
-      h1.about-us{
-        font-size: 18px;
-      }
-      .footer-section img {
-        height: 50px;
-        width: auto;
-      }
-      
-    }
   
     a {
       text-decoration: none;
