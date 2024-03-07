@@ -95,6 +95,8 @@ li {
   margin-top: 20px;
   font-family: "Karla", sans-serif;
   color: black;
+  justify-content: center; 
+  align-items: center;
 }
 
 li a {
@@ -125,7 +127,9 @@ li:hover a {
   .hamburger-icon {
     display: none;
   }
-
+.image-banner{
+    padding-top: 80px;
+}
   #main-menu {
     display: flex;
     background: transparent;
@@ -139,6 +143,7 @@ li:hover a {
   .li {
     font-size: 15px;
   }
+  
 }
 
 
@@ -176,7 +181,10 @@ li:hover a {
     height: 40px;
     width: auto;
   }
-
+  .social-icon img{
+    height: 30px;
+   }
+}
 #main-content {
   background-color: white;
   display: grid;
@@ -200,8 +208,9 @@ li:hover a {
     height:100px;
   }
   .social-icons img{
-    height: 50px;
+    height: 35px;
    display: inline-block;
+   padding: 20px;
   }
   .terms-privacy p a {
     text-decoration: none;
@@ -238,13 +247,11 @@ padding: 15px;
   
       .terms-privacy p{
         font-size: 15px;
-      }
+      } 
       
     }
-    .social-icon{
-     width: 80px;
-    }
-  
+    
+
   
   @media screen and (max-width: 280px) {
     #main-header {
@@ -260,10 +267,13 @@ padding: 15px;
       h1.about-us{
         font-size: 18px;
       }
+      .footer-section img {
+        height: 50px;
+        width: auto;
+      }
       
     }
   
     a {
       text-decoration: none;
   }
-  
