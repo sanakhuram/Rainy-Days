@@ -1,0 +1,211 @@
+@import url(./global.css);
+
+/*--index page--*/
+
+
+.container1 {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.green {
+    background-color: #365D3A;
+}
+
+.red {
+    background-color: #D63A4E;
+}
+
+.text-container h2 {
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    font-family: "Karla", sans-serif;
+    padding: 50px;
+}
+
+.text-container p {
+    color: white;
+    font-size: 24px;
+    font-family: "Karla", sans-serif;
+    padding: 30px;
+    text-align: center;
+}
+
+.text-container {
+    flex: 1;
+}
+
+.image-container {
+    flex: 1;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: darkorange;
+}
+
+/* Button Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+button.animated {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+/* Media Query for smaller screens (e.g., mobile devices) */
+@media (max-width: 920px) {
+    .red {
+        flex-direction: column-reverse;
+    }
+
+    .green {
+        flex-direction: column;
+    }
+
+    .container1 h2 {
+        font-size: 20px;
+    }
+
+    .container1 p {
+        font-size: 18px;
+    }
+
+    .text-container {
+        text-align: center;
+    }
+
+    .Product-image {
+        width: auto;
+        height: auto;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .jacket1,
+    .jacket2,
+    .jacket3,
+    .jacket4 h2 {
+        font-size: 20px;
+    }
+    
+    .jacket1,
+    .jacket2,
+    .jacket3,
+    .jacket4 p {
+        font-size: 16px;
+    }
+    .container-sale{
+        flex-direction: column;
+    }
+}
+
+.article {
+    text-align: center;
+    padding: 10px;
+}
+
+.jacket1 {
+    background-color: #E5452B;
+}
+
+.jacket2 {
+    background-color: #C30000;
+}
+
+.jacket4 {
+    background-color: #3EC7BE;
+}
+
+.jacket3 {
+    background-color: #702D59;
+}
+
+.Product-image {
+    width: 500px;
+    height: 500px;
+}
+
+.jacket1,
+.jacket2,
+.jacket3,
+.jacket4,
+h2 {
+    text-align: center;
+    font-size: 32px;
+    padding: 20px;
+    font-family: "Karla", sans-serif;
+    color: white;
+}
+
+.jacket1,
+.jacket2,
+.jacket3,
+.jacket4,
+p {
+    font-size: 24px;
+    padding: 20px;
+}
+
+
+.heading {
+    color: black;
+    text-align: left;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
+.container-sale {
+    display: flex; 
+    align-items: center; 
+    background-color: #FFD504;
+    padding: 20px;
+}
+.container-sale h2{
+    font-size: 32px;
+    font-family:"Karla", sans-serif;
+    color: black;
+    text-align: center;
+}
+
+.sale-image {
+    width: 400px; 
+    height: auto; 
+     
+}

@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap')
+
+
+:root {
+  --primary-color: white;
+  --secondry-color: rgb(19, 236, 91);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+/*.outside-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}*/
+
+/*page header*/
+
+#main-header {
+  display: flex;
+  background-color: #88B473;
+  justify-content: space-between;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.image-logo {
+  width: 150px;
+  padding: 20px;
+}
+
+#logo-wrapper{
+   display: flex;
+   align-items: center;
+   color: rgb(12, 12, 12);
+}
+
+/*Nav menu*/
+
+#main-menu{
+  position: absolute;
+  right: 0px;
+  list-style: none;
+  background-color:#88B473;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgb(216, 179, 13);
+  color: white;
+  width: 100%;
+  z-index: 2;
+}
+
+#main-menu > ul {
+  list-style: none;
+  padding: 0;
+}
+
+#main-menu > ul > li > a {
+  display: inline-block;
+  color: rgb(12, 12, 12); 
+}
+
+#main-menu,
+#hamburger {
+  display: none;
+}
+
+#hamburger:checked + #main-menu {
+  display: block;
+}
+
+li {
+  flex-grow: 1;
+  cursor: pointer;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: "Karla", sans-serif;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+li:hover a {
+  color: rgba(255, 187, 0, 0.986);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/** Media queries */
+@media (min-width: 920px) {
+  .hamburger-icon {
+    display: none;
+  }
+
+  #main-menu {
+    display: flex;
+    background: transparent;
+    box-shadow: none;
+    width: 50%;
+    align-items: flex-end;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .li {
+    font-size: 15px;
+  }
+}
+
+
+.heading-over-image {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: #D1EB4B;
+  font-size: 60px;
+  font-family: "Karla", sans-serif;
+}
+
+#banner {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (min-width: 240px) and (max-width: 800px) and (min-resolution: 2dppx) {
+  .heading-over-image {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 50px;
+  }
+  #main-header{
+    height: 70px;
+  }
+  .image-banner{
+    padding-top: 70px;
+  }
+  }
+
+#main-content {
+  background-color: white;
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+/*footer*/
+.footer-wrapper {
+    background-color:#88B473;
+    padding: 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+  .footer-section img{
+    height:100px;
+  }
+  .social-icons img{
+    height: 50px;
+   display: inline-block;
+  }
+  .terms-privacy p a {
+    text-decoration: none;
+    color: rgb(205, 50, 50);
+  }
+  
+  .footer-section h4{
+text-align: center;
+font-family:"Karla", sans-serif;
+padding: 15px;
+  }
+
+  .terms-privacy h3{
+    font-family: "Karla", sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  .terms-privacy p{
+    text-align: center;
+    font-family: "Karla", sans-serif;
+    font-size: 15px;
+  }
+    .hamburger-icon img {
+      width: 40px;
+      height: auto; 
+    }
+  
+   
+    @media (max-width: 920px) {
+      .hamburger-icon img {
+        width: 30px;
+        margin-top: 20px;
+      }
+  
+      .terms-privacy p{
+        font-size: 15px;
+      }
+      
+    }
+    .social-icon{
+     width: 80px;
+    }
+  
+  
+  @media screen and (max-width: 280px) {
+    #main-header {
+      position: static; 
+    }
+      img.explore-banner {
+        height: auto;
+        margin-top: 0px;
+    }
+      img.image-banner{
+        padding: 0px;
+      }
+      h1.about-us{
+        font-size: 18px;
+      }
+      
+    }
+  
+    a {
+      text-decoration: none;
+  }
+  
