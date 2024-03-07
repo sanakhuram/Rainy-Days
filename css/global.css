@@ -1,17 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap')
 
+/* Reset default styles */
 
-:root {
-  --primary-color: white;
-  --secondry-color: rgb(19, 236, 91);
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Set basic styles for HTML and body */
 html,
 body {
   height: 100vh;
@@ -19,9 +15,9 @@ body {
   width: 100%;
 }
 
+/* Style images */
 img {
   max-width: 100%;
-  width: auto;
   height: auto;
   display: block;
 }
@@ -98,11 +94,12 @@ li {
   padding: 20px;
   margin-top: 20px;
   font-family: "Karla", sans-serif;
+  color: black;
 }
 
 li a {
   text-decoration: none;
-  color: white;
+  color: rgb(7, 7, 7);
   font-family: "Karla", sans-serif;
   font-size: 18px;
   text-align: center;
@@ -175,6 +172,9 @@ li:hover a {
   .image-banner{
     padding-top: 70px;
   }
+  .image-logo{
+    height: 40px;
+    width: auto;
   }
 
 #main-content {
