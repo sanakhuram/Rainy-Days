@@ -69,6 +69,13 @@
   #banner-image{
     width: 100%;
 }
+#banner h1{
+    text-align: center;
+    border-bottom: 1px solid green;
+    font-family: "Karla", sans-serif;
+    padding-bottom: 20px;
+    font-size: 26px;
+}
 @media screen and (max-width: 768px) {
     .container {
         flex-direction: column; 
@@ -126,4 +133,10 @@ form textarea {
     padding: 20px;
   text-align: center;
 
+}
+.cart-item li{
+   display: inline-block;
+}
+.cart-item img{
+    height: 200px;
 }
