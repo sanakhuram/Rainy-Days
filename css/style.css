@@ -218,6 +218,7 @@ h1{
         grid-template-columns: 1fr; 
     }
 }
+/*----About us page---*/
 
 .container2 {
     justify-content: center;
@@ -274,4 +275,23 @@ h1{
     .text-container1 h2 {
         font-size: 18px;
     }
+}
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.terms h1{
+    color: black;
+    padding-top: 100px;
+}
+.terms h2{
+    color: black;
+    text-align: left;
+    font-size: 20px;
+    font-family:"Karla", sans-serif;
+}
+.terms p{
+    font-family:"Karla", sans-serif;
+    font-size: 18px;
 }

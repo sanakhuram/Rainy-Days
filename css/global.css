@@ -104,7 +104,7 @@ li a {
   text-decoration: none;
   color: rgb(7, 7, 7);
   font-family: "Karla", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -282,7 +282,13 @@ padding: 15px;
       width: 40px;
       height: auto; 
     }
-  
+  .terms-privacy a{
+    color: black;
+  }
+  .terms-privacy a:hover {
+    color: #D1EB4B;
+}
+
    
     @media (max-width: 920px) {
       .hamburger-icon img {
