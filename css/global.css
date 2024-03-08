@@ -33,7 +33,7 @@ img {
 
 #main-header {
   display: flex;
-  background-color: #88B473;
+  background-color: hwb(95 41% 51%);
   justify-content: space-between;
   height: 100px;
   position: fixed;
@@ -60,7 +60,7 @@ img {
   position: absolute;
   right: 0px;
   list-style: none;
-  background-color:#88B473;
+  background-color:hwb(95 41% 51%);
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgb(216, 179, 13);
   color: white;
@@ -134,7 +134,7 @@ li:hover a {
     display: flex;
     background: transparent;
     box-shadow: none;
-    width: 50%;
+    width: 60%;
     align-items: flex-end;
     font-size: 16px;
   }
@@ -178,7 +178,7 @@ li:hover a {
     padding-top: 70px;
   }
   .image-logo{
-    height: 40px;
+    height: 50px;
     width: auto;
   }
   .social-icon img{
@@ -239,7 +239,7 @@ button.animated {
 
 /*footer*/
 .footer-wrapper {
-    background-color:#88B473;
+    background-color:hwb(95 41% 51%);
     padding: 20px;
     height: 400px;
     display: flex;
@@ -287,6 +287,7 @@ padding: 15px;
       .hamburger-icon img {
         width: 30px;
         margin-top: 20px;
+        margin-right: 20px;
       }
   
       .terms-privacy p{
