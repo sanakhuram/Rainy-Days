@@ -102,6 +102,7 @@
 form{
     max-width: 800px; 
     padding: 20px;
+    margin: 0 auto;
 }
  form div{
     margin-bottom: 15px;
@@ -109,18 +110,20 @@ form{
  form label{
     font-weight: bold;
     font-family: "Karla", sans-serif;
+    padding: 5px;
  }
 
  form input[type="text"],
 form input[type="email"],
 form textarea {
     width: 100%;
-    padding: 8px;
+    padding: 15px;
     border-radius: 5px;
     border: 1px solid #b8b5b5;
 }
 #contact h2{
     font-family: "Karla", sans-serif;
-    padding: 20px;  
-    border-top: 2px solid #44794f;
+    padding: 20px;
+  text-align: center;
+
 }
