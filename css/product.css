@@ -28,12 +28,10 @@
 }
 .info h1{
     font-size: 24px;
-    font-family: "Karla", sans-serif;
 }
 .info p {
     font-size: 18px;
     line-height: 1.5;
-    font-family: "Karla", sans-serif;
 }
 .size-dropdown {
     position: relative;
@@ -57,7 +55,6 @@
   .size-dropdown-content a {
     color: black;
     display: block;
-    font-family: "Karla", sans-serif;
     color: white;
 
   }
@@ -72,7 +69,6 @@
 #banner h1{
     text-align: center;
     border-bottom: 1px solid green;
-    font-family: "Karla", sans-serif;
     padding-bottom: 20px;
     font-size: 26px;
 }
@@ -110,34 +106,34 @@ form{
     max-width: 800px; 
     padding: 20px;
     margin: 0 auto;
+    background-color: hwb(95 41% 51%);
 }
  form div{
     margin-bottom: 15px;
  }
  form label{
     font-weight: bold;
-    font-family: "Karla", sans-serif;
     padding: 5px;
  }
 
  form input[type="text"],
 form input[type="email"],
 form textarea {
-    width: 100%;
+    width: 95%;
     padding: 15px;
     border-radius: 5px;
     border: 1px solid #b8b5b5;
 }
 #contact h2{
-    font-family: "Karla", sans-serif;
     padding: 20px;
   text-align: center;
 
 }
-
+/*----Cart---*/
 .cart-container{
     margin: 0 auto;
-    
+  border: 1px solid darkgreen;
+  background-color:#a1a8a2 ;
 }
 .product-info{
     display: flex;
@@ -154,28 +150,36 @@ form textarea {
 }
 .product-details{
     flex-grow: 1;
-    font-family: "Karla", sans-serif;
     text-align: left;
 }
-.quantity{
+.quantity {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 10px;
-    font-family: "Karla", sans-serif;
-    margin-right: 20px;
+    padding-right: 10px;
+}
+.quantity h3{
+    padding-right: 10px;
+}
+.quantity button {
+    padding: 5px 10px;
+}
+.btn {
+    padding: 10px;
+}
+.quantity-value {
+    padding: 0 10px;
+    font-size: 18px;
 }
 .total {
     font-weight: bold;
     text-align: right;
     margin-top: 20px;
-    font-family: "Karla", sans-serif;
     border-top: 1px solid rgb(66, 68, 66);
     font-size: 24px;
     margin-right: 20px;
+    margin-bottom: 30px;
 }
 .cart-container h2{
-    font-family: "Karla", sans-serif;
     border-bottom: 1px solid rgb(46, 49, 46);
 }
 @media (max-width: 768px) {
@@ -206,4 +210,87 @@ form textarea {
     .details h1{
         font-size: 20px;
     }
+}
+
+
+.payment-container {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #a1a8a2;
+}
+
+.payment-container h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px solid darkgreen;
+}
+
+ul {
+    list-style-type:none ;
+    padding: 0;
+    margin: 0;
+}
+
+.data-usage p {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.terms-conditions {
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+input[type="checkbox"] {
+    margin-top: 5px;
+}
+.order-summary{
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+}
+
+.order-summary h2{
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.item {
+    margin-bottom: 10px;
+}
+
+
+.price {
+    margin-left: auto;
+    float: right;
+}
+
+.subtotal .amount,
+.shipping .amount,
+.total .amount  {
+    float: right;
+}
+.checkout-button {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+/*---success page---*/
+.success-container{
+    max-width: 800px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+.success-container img{
+    margin: 0 auto;
+}
+.success-container p{
+    justify-content: center;
+    padding: 20px;
 }
