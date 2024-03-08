@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This page aims to show details of the selected product">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="../css/product.css">
+</head>
+
+<body>
+    <div class="outside-wrapper">
+        <header id="main-header">
+            <div id="logo-wrapper">
+                <a href="../index.html">
+                <img src="../assets/RainyDays_Logo.png" alt="logo of RainyDays." class="image-logo">
+           </a> 
+        </div>
+            <div>
+                <nav id="main-nav">
+                    <label class="hamburger-icon" for="hamburger">
+                        <span class="visually-hidden">Menu hamburger bars</span>
+                        <img src="../assets/Hamburger-menu.png" alt="Menu hamburger bars" class="hamburger-icon">
+                    </label>
+                    <input id="hamburger" type="checkbox">
+
+                    <ul id="main-menu">
+                        <li><a href="../html/MenCollection.html">MEN</a></li>
+                        <li><a href="../html/WomenCollection.html">WOMEN</a></li>
+                        <li><a href="../html/AboutUs.html">ABOUT</a></li>
+                        <li><a href="../html/Privacy&Terms.html">CONTACT</a></li>
+                        <li><a href="../html/Cart.html">CART(0)</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <section id="banner">
+            <img src="../assets/product-details.jpg"
+                alt="Adventurer man resting while sitting on rock. Bearded hiker with hiking equipment resting on a rock on top of the mount during day.">   
+        </section>
+        <section class="product-section">
+            <div class="container">
+                <div class="jacket-image">
+                    <img src="../assets/Softshell-Jacket.jpg" alt="Soft shell jacket image">
+                    <h2 class="price">$179</h2>
+                </div>
+                <div class="info">
+                    <h1>Softshell Running Jacket</h1>
+                    <h1>Dark Grey</h1>
+                    <p>"Stay dry and stylish in this water-resistant jacket with a comfortable and lightweight design,
+                        tailored for your active lifestyle. Whether you're hitting the trails or running errands, this
+                        versatile jacket keeps you protected from the elements while ensuring breathability and freedom
+                        of movement.</p>
+                    <p> Its sleek silhouette and modern features make it a go-to choice for outdoor adventures and
+                        everyday wear. Elevate your wardrobe with this essential piece that combines functionality and
+                        fashion effortlessly."</p>
+                        <a href="../html/Cart.html" class="add-to-cart">
+                            <button>Add to Cart</button>
+                        </a>
+                        <div class="size-dropdown">
+                            <button class="add-to-cart">Select Size</button>
+                            <div class="size-dropdown-content">
+                              <a href="#">Small</a>
+                              <a href="#">Medium</a>
+                              <a href="#">Large</a>
+                            </div>
+                          </div>
+                </div>
+            </div>
+        </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <div>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email</label><br>
+                <input type="email" id="name" name="email" required>
+            </div>
+            <div>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message"
+            rows="6" required></textarea>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        </form>
+    </section>
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-section">
+                    <h4>Follow Us:</h4>
+                    <div class="social-icons">
+                        <img src="../assets/facebook-logo_icon.png" alt="Facebook Logo">
+                        <img src="../assets/twitter_icon.png" alt="Twitter Logo">
+                        <img src="../assets/instagram_icon.png" alt="Instagram Logo">
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <img src="../assets/RainyDays_Logo.png" alt="RainyDays Logo">
+                </div>
+                <div class="terms-privacy">
+                    <h3><a href="../html/Privacy&Terms.html">Terms & Conditions</a></h3>
+                    <p>© 2024 Rainy Days. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+</body>
+
+</html>

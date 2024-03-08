@@ -1,1 +1,126 @@
 @import url(./global.css);
+.product-section{
+    background-color: rgb(233, 232, 232);
+}
+.container{
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-top: 30px;
+}
+.jacket-image{
+    flex: 1;
+    margin-right: 20px;
+}
+.jacket-image img{
+    max-width: 100%;
+    height: auto;
+}
+.price h2{
+    bottom: 10px;
+    left: 10px;
+    font: 18px;
+    font-size: 18px;
+    color: #333;
+}
+.info{
+    flex: 2;
+}
+.info h1{
+    font-size: 24px;
+    font-family: "Karla", sans-serif;
+}
+.info p {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: "Karla", sans-serif;
+}
+.size-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .size-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:rgb(253, 170, 68);
+    min-width: 100px;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 10px;
+  }
+
+  .size-dropdown:hover .size-dropdown-content {
+    display: block;
+  }
+
+  .size-dropdown-content a {
+    color: black;
+    display: block;
+    font-family: "Karla", sans-serif;
+    color: white;
+
+  }
+
+  .size-dropdown-content a:hover {
+    background-color: #c24949;
+  }
+  
+  #banner-image{
+    width: 100%;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        padding: 20px;
+    }
+
+    .jacket-image {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+    }
+
+    .info {
+        width: 100%; 
+    }
+
+    .size-dropdown {
+        display: block;
+        margin-top: 20px; 
+    }
+
+    .size-dropdown-content {
+        width: 100%;
+        min-width: unset; 
+        border-radius: 0; 
+        padding: 10px 0; 
+    }
+    #banner{
+        padding-top: 70px;
+    }
+}
+form{
+    max-width: 800px; 
+    padding: 20px;
+}
+ form div{
+    margin-bottom: 15px;
+ }
+ form label{
+    font-weight: bold;
+    font-family: "Karla", sans-serif;
+ }
+
+ form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #b8b5b5;
+}
+#contact h2{
+    font-family: "Karla", sans-serif;
+    padding: 20px;  
+    border-top: 2px solid #44794f;
+}

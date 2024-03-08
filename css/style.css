@@ -68,33 +68,22 @@
     }
 
     .Product-image {
-        width: auto;
+        max-width: 100%;
         height: auto;
     }
 
     .heading {
         font-size: 20px;
     }
-
-    .jacket1,
-    .jacket2,
-    .jacket3,
-    .jacket4 h2 {
-        font-size: 20px;
-    }
-    
-    .jacket1,
-    .jacket2,
-    .jacket3,
-    .jacket4 p {
-        font-size: 16px;
-    }
+  
     .container-sale{
         flex-direction: column;
     }
 }
 
 .article {
+    display: grid;
+    place-items: center;
     text-align: center;
     padding: 10px;
 }
@@ -116,8 +105,8 @@
 }
 
 .Product-image {
-    width: 500px;
-    height: 500px;
+    height: 400px;
+    width: auto;
 }
 
 .jacket1,
@@ -126,7 +115,7 @@
 .jacket4,
 h2 {
     text-align: center;
-    font-size: 32px;
+    font-size: 24px;
     padding: 20px;
     font-family: "Karla", sans-serif;
     color: white;
@@ -137,7 +126,7 @@ h2 {
 .jacket3,
 .jacket4,
 p {
-    font-size: 24px;
+    font-size: 20px;
     padding: 20px;
 }
 
@@ -177,16 +166,20 @@ p {
     margin: 0 auto;
     max-width: 1000px;
     margin-bottom: 50px;
-    justify-content: center;
+    place-items: center;
 }
 
 .grid-item {
     text-align: center;
     width: 100%;
+    place-items: center;
 }
 
 .grid-item img {
     height: 400px; 
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
 }
 
 .jacket-name {
@@ -235,7 +228,6 @@ h1{
 .image-container,
 .text-container1 {
     width: 60%;
-    padding: 10px;
 }
 
 .text-container1 h2 {
@@ -260,7 +252,7 @@ h1{
 }
 @media screen and (max-width: 600px) {
     .content-wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
         text-align: center;
     }
