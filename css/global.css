@@ -167,7 +167,7 @@ li:hover a {
   width: 100%;
 }
 
-@media only screen and (min-width: 240px) and (max-width: 800px) and (min-resolution: 2dppx) {
+@media only screen and (min-width: 240px) and (max-width: 900px) and (min-resolution: 2dppx) {
   .heading-over-image {
     font-size: 20px;
     text-align: center;
@@ -186,6 +186,7 @@ li:hover a {
   .social-icon img{
     height: 30px;
    }
+   
 }
 #main-content {
   background-color: white;
@@ -306,8 +307,6 @@ padding: 15px;
       } 
       
     }
-    
-  
-    a {
+  a {
       text-decoration: none;
   }

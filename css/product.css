@@ -103,10 +103,11 @@
     }
 }
 form{
-    max-width: 800px; 
-    padding: 20px;
+    max-width: 1200px; 
+    padding: 40px;
     margin: 0 auto;
-    background-color: hwb(95 41% 51%);
+    background-color: hwb(95deg 70.62% 23.94%);
+    margin-bottom: 20px;
 }
  form div{
     margin-bottom: 15px;
@@ -294,3 +295,4 @@ input[type="checkbox"] {
     justify-content: center;
     padding: 20px;
 }
+
