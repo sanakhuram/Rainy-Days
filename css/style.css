@@ -86,29 +86,21 @@
     place-items: center;
     text-align: center;
     padding: 10px;
+    background-color: hwb(95deg 70.62% 23.94%)
 }
-
-.jacket1 {
-    background-color: #E5452B;
+.article:hover {
+    background-color: hwb(95 41% 51%);
 }
-
-.jacket2 {
-    background-color: #C30000;
+.article:active{
+    background-color: #D1EB4B;
 }
-
-.jacket4 {
-    background-color: #3EC7BE;
-}
-
-.jacket3 {
-    background-color: #702D59;
-}
-
 .Product-image {
     height: 400px;
     width: auto;
 }
-
+article a{
+    color: black;
+}
 .jacket1,
 .jacket2,
 .jacket3,
@@ -117,8 +109,6 @@ h2 {
     text-align: center;
     font-size: 24px;
     padding: 20px;
-    font-family: "Karla", sans-serif;
-    color: white;
 }
 
 .jacket1,
@@ -145,7 +135,6 @@ p {
 }
 .container-sale h2{
     font-size: 32px;
-    font-family:"Karla", sans-serif;
     color: black;
     text-align: center;
 }
@@ -173,6 +162,12 @@ p {
     text-align: center;
     width: 100%;
     place-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.grid-item:hover img {
+   transform: scale(1.1);
 }
 
 .grid-item img {
@@ -180,6 +175,7 @@ p {
     max-width: 100%;
     display: block;
     margin: 0 auto;
+    transition: transform 0.3s;
 }
 
 .jacket-name {
