@@ -128,8 +128,10 @@ form textarea {
 #contact h2{
     padding: 20px;
   text-align: center;
-
+  border-top: 1px solid black;
 }
+
+
 /*----Cart---*/
 .cart-container{
     margin: 0 auto;
@@ -281,18 +283,23 @@ input[type="checkbox"] {
     width: 50%;
     margin: 0 auto;
 }
-/*---success page---*/
-.success-container{
-    max-width: 800px;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-}
-.success-container img{
-    margin: 0 auto;
-}
-.success-container p{
-    justify-content: center;
-    padding: 20px;
-}
 
+.containers{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.terms h1{
+    color: black;
+    padding-top: 100px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+.terms h2{
+    color: black;
+    text-align: left;
+    font-size: 20px;
+}
+.terms p{
+    font-size: 18px;
+}

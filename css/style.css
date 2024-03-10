@@ -263,22 +263,17 @@ h1{
         font-size: 18px;
     }
 }
-.container{
-    max-width: 1200px;
+/*---success page---*/
+.success-container{
+    max-width: 800px;
+    align-items: center;
+    text-align: center;
     margin: 0 auto;
-    padding: 0 20px;
 }
-.terms h1{
-    color: black;
-    padding-top: 100px;
+.success-container img{
+    margin: 0 auto;
 }
-.terms h2{
-    color: black;
-    text-align: left;
-    font-size: 20px;
-    font-family:"Karla", sans-serif;
-}
-.terms p{
-    font-family:"Karla", sans-serif;
-    font-size: 18px;
+.success-container p{
+    justify-content: center;
+    padding: 20px;
 }
