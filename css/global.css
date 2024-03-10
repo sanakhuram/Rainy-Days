@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap')
 
 /* Reset default styles */
-
-*::before, *::after { 
-    box-sizing: border-box; 
-}
-
+:root {
+  --primary-color : rgb(253, 249, 249);
+  --secondry-color : rgb(118, 153, 130);
+  }
+  * {
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+  }
 
 /* Set basic styles for HTML and body */
 html,
