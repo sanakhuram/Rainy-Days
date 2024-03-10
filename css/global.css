@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap')
-
 /* Reset default styles */
-  * {
-  margin : 0;
-  padding : 0;
-  box-sizing : border-box;
-  }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 
 /* Set basic styles for HTML and body */
 html,
@@ -43,19 +44,19 @@ img {
   padding: 20px;
 }
 
-#logo-wrapper{
-   display: flex;
-   align-items: center;
-   color: rgb(12, 12, 12);
+#logo-wrapper {
+  display: flex;
+  align-items: center;
+  color: rgb(12, 12, 12);
 }
 
 /*Nav menu*/
 
-#main-menu{
+#main-menu {
   position: absolute;
   right: 0px;
   list-style: none;
-  background-color:hwb(95 41% 51%);
+  background-color: hwb(95 41% 51%);
   border-radius: 5px;
   box-shadow: 1px 1px 1px 1px rgb(216, 179, 13);
   color: white;
@@ -63,14 +64,14 @@ img {
   z-index: 2;
 }
 
-#main-menu > ul {
+#main-menu>ul {
   list-style: none;
   padding: 0;
 }
 
-#main-menu > ul > li > a {
+#main-menu>ul>li>a {
   display: inline-block;
-  color: rgb(12, 12, 12); 
+  color: rgb(12, 12, 12);
 }
 
 #main-menu,
@@ -78,7 +79,7 @@ img {
   display: none;
 }
 
-#hamburger:checked + #main-menu {
+#hamburger:checked+#main-menu {
   display: block;
 }
 
@@ -90,7 +91,7 @@ li {
   margin-top: 20px;
   font-family: "Karla", sans-serif;
   color: black;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
 
@@ -121,9 +122,11 @@ li:hover a {
   .hamburger-icon {
     display: none;
   }
-.image-banner{
+
+  .image-banner {
     padding-top: 80px;
-}
+  }
+
   #main-menu {
     display: flex;
     background: transparent;
@@ -133,11 +136,12 @@ li:hover a {
     font-size: 16px;
   }
 }
+
 @media screen and (min-width: 1201px) {
   .li {
     font-size: 15px;
   }
-  
+
 }
 
 
@@ -165,21 +169,26 @@ li:hover a {
     text-align: center;
     padding-top: 50px;
   }
-  #main-header{
+
+  #main-header {
     height: 70px;
   }
-  .image-banner{
+
+  .image-banner {
     padding-top: 70px;
   }
-  .image-logo{
+
+  .image-logo {
     height: 50px;
     width: auto;
   }
-  .social-icon img{
+
+  .social-icon img {
     height: 30px;
-   }
-   
+  }
+
 }
+
 #main-content {
   background-color: white;
   display: grid;
@@ -188,117 +197,126 @@ li:hover a {
   gap: 10px;
   margin-bottom: 20px;
 }
+
 .button {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+  background-color: orange;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .button-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 /* Button Hover Effect */
 .button:hover {
-    background-color: darkorange;
+  background-color: darkorange;
 }
 
 /* Button Animation */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
+  }
 
-    50% {
-        transform: scale(1.1);
-    }
+  50% {
+    transform: scale(1.1);
+  }
 
-    100% {
-        transform: scale(1);
-    }
+  100% {
+    transform: scale(1);
+  }
 }
 
 button.animated {
-    animation-name: pulse;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
 }
-button a{
-    color: black;
+
+button a {
+  color: black;
 }
 
 /*footer*/
 .footer-wrapper {
-    background-color:hwb(95 41% 51%);
-    padding: 20px;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  background-color: hwb(95 41% 51%);
+  padding: 20px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-  
-  .footer-section img{
-    height:100px;
-  }
-  .social-icons img{
-    height: 35px;
-   display: inline-block;
-   padding: 20px;
-  }
-  .terms-privacy p a {
-    text-decoration: none;
-    color: rgb(205, 50, 50);
-  }
-  
-  .footer-section h4{
-text-align: center;
-font-family:"Karla", sans-serif;
-padding: 15px;
+
+.footer-section img {
+  height: 100px;
+}
+
+.social-icons img {
+  height: 35px;
+  display: inline-block;
+  padding: 20px;
+}
+
+.terms-privacy p a {
+  text-decoration: none;
+  color: rgb(205, 50, 50);
+}
+
+.footer-section h4 {
+  text-align: center;
+  font-family: "Karla", sans-serif;
+  padding: 15px;
+}
+
+.terms-privacy h3 {
+  font-family: "Karla", sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.terms-privacy p {
+  text-align: center;
+  font-family: "Karla", sans-serif;
+  font-size: 15px;
+}
+
+.hamburger-icon img {
+  width: 40px;
+  height: auto;
+}
+
+.terms-privacy a {
+  color: black;
+}
+
+.terms-privacy a:hover {
+  color: #D1EB4B;
+}
+
+
+@media (max-width: 920px) {
+  .hamburger-icon img {
+    width: 30px;
+    margin-top: 20px;
+    margin-right: 20px;
   }
 
-  .terms-privacy h3{
-    font-family: "Karla", sans-serif;
-    text-align: center;
-    padding: 20px;
-  }
-  .terms-privacy p{
-    text-align: center;
-    font-family: "Karla", sans-serif;
+  .terms-privacy p {
     font-size: 15px;
   }
-    .hamburger-icon img {
-      width: 40px;
-      height: auto; 
-    }
-  .terms-privacy a{
-    color: black;
-  }
-  .terms-privacy a:hover {
-    color: #D1EB4B;
+
 }
 
-   
-    @media (max-width: 920px) {
-      .hamburger-icon img {
-        width: 30px;
-        margin-top: 20px;
-        margin-right: 20px;
-      }
-  
-      .terms-privacy p{
-        font-size: 15px;
-      } 
-      
-    }
-  a {
-      text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}

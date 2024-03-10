@@ -24,13 +24,11 @@
     color: white;
     font-size: 32px;
     text-align: center;
-    font-family: "Karla", sans-serif;
 }
 
 .text-container p {
     color: white;
     font-size: 24px;
-    font-family: "Karla", sans-serif;
     padding: 30px;
     text-align: center;
 }
@@ -75,8 +73,8 @@
     .heading {
         font-size: 20px;
     }
-  
-    .container-sale{
+
+    .container-sale {
         flex-direction: column;
     }
 }
@@ -88,19 +86,24 @@
     padding: 10px;
     background-color: hwb(95deg 70.62% 23.94%)
 }
+
 .article:hover {
     background-color: hwb(95 41% 51%);
 }
-.article:active{
+
+.article:active {
     background-color: #D1EB4B;
 }
+
 .Product-image {
     height: 400px;
     width: auto;
 }
-article a{
+
+article a {
     color: black;
 }
+
 .jacket1,
 .jacket2,
 .jacket3,
@@ -127,31 +130,33 @@ p {
     border-bottom: 2px solid black;
     margin-bottom: 10px;
 }
+
 .container-sale {
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
     background-color: #FFD504;
     padding: 20px;
 }
-.container-sale h2{
+
+.container-sale h2 {
     font-size: 32px;
     color: black;
     text-align: center;
 }
 
 .sale-image {
-    width: 400px; 
-    height: auto; 
-     
+    width: 400px;
+    height: auto;
+
 }
 
 /*--Men Collection--*/
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px; 
-    background-color: #f0f0f0; 
-    padding: 20px; 
+    grid-gap: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
     margin: 0 auto;
     max-width: 1000px;
     margin-bottom: 50px;
@@ -166,12 +171,13 @@ p {
     overflow: hidden;
     transition: transform 0.3s;
 }
+
 .grid-item:hover img {
-   transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .grid-item img {
-    height: 400px; 
+    height: 400px;
     max-width: 100%;
     display: block;
     margin: 0 auto;
@@ -181,18 +187,16 @@ p {
 .jacket-name {
     font-weight: bold;
     margin-top: 10px;
-    font-family:"Karla", sans-serif;
 }
 
 .price {
-    color: #666; 
+    color: #666;
 }
 
-h1{
+h1 {
     text-align: center;
-    border-bottom: 1px solid black ;
+    border-bottom: 1px solid black;
     font-size: 30px;
-    font-family:"Karla", sans-serif ;
 }
 
 @media (max-width: 992px) {
@@ -203,9 +207,10 @@ h1{
 
 @media (max-width: 600px) {
     .grid-container {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 }
+
 /*----About us page---*/
 
 .container2 {
@@ -215,7 +220,7 @@ h1{
 
 .content-wrapper {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     width: 100%;
 }
@@ -229,22 +234,22 @@ h1{
     font-size: 32px;
     margin-bottom: 10px;
     color: black;
-    font-family:"Karla", sans-serif;
 }
 
 .text-container1 p {
     font-size: 20px;
     line-height: 1.5;
-    font-family:"Karla", sans-serif;
 }
-.text-container1 h3{
-    font-family:"Karla", sans-serif;
+
+.text-container1 h3 {
+    font-family: "Karla", sans-serif;
 }
 
 .image-container img {
     max-width: 100%;
     height: auto;
 }
+
 @media screen and (max-width: 600px) {
     .content-wrapper {
         flex-direction: column-reverse;
@@ -254,26 +259,31 @@ h1{
 
     .image-container,
     .text-container1 {
-        width: 100%; 
+        width: 100%;
     }
-    .text-container1 p{
+
+    .text-container1 p {
         font-size: 16px;
     }
+
     .text-container1 h2 {
         font-size: 18px;
     }
 }
+
 /*---success page---*/
-.success-container{
+.success-container {
     max-width: 800px;
     align-items: center;
     text-align: center;
     margin: 0 auto;
 }
-.success-container img{
+
+.success-container img {
     margin: 0 auto;
 }
-.success-container p{
+
+.success-container p {
     justify-content: center;
     padding: 20px;
 }

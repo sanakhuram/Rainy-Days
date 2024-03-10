@@ -10,164 +10,166 @@
 </head>
 
 <body>
-        <header id="main-header">
-            <div id="logo-wrapper">
-                <a href="../index.html">
+    <header id="main-header">
+        <div id="logo-wrapper">
+            <a href="../index.html">
                 <img src="../assets/RainyDays_Logo.png" alt="logo of RainyDays." class="image-logo">
-           </a> 
+            </a>
         </div>
+        <div>
+            <nav id="main-nav">
+                <label class="hamburger-icon" for="hamburger">
+                    <span class="visually-hidden">Menu hamburger bars</span>
+                    <img src="../assets/Hamburger-menu.png" alt="Menu hamburger bars" class="hamburger-icon">
+                </label>
+                <input id="hamburger" type="checkbox">
+
+                <ul id="main-menu">
+                    <li><a href="../html/MenCollection.html">MEN</a></li>
+                    <li><a href="../html/WomenCollection.html">WOMEN</a></li>
+                    <li><a href="../html/AboutUs.html">ABOUT</a></li>
+                    <li><a href="../html/Privacy&Terms.html">CONTACT</a></li>
+                    <li><a href="../html/Cart.html">CART(0)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="banner">
+        <img src="../assets/cart.jpg"
+            alt="Athletic muscular young man in sports outfit is jogging in the street on a rain">
+        <h1 class="details">Complete Your Order Now</h1>
+    </section>
+    <div class="cart-container">
+        <h2>Shopping Cart Details</h2>
+        <div class="product-info">
+            <img src="../assets/Softshell-Jacket.jpg" alt="Softshell Running Jacket" class="product-image">
+            <div class="product-details">
+                <h3>Softshell Running Jacket</h3>
+                <p>Color: Dark Grey</p>
+                <p>Price: $179</p>
+            </div>
+            <div class="quantity">
+                <h3>Quantity :</h3>
+                <button>-</button>
+                <span class="btn">1</span>
+                <button>+</button>
+            </div>
+        </div>
+    </div>
+    <div class="total">
+        Total:$179
+    </div>
+    <section class="form-container">
+        <form>
+            <h2>Contact Information</h2>
             <div>
-                <nav id="main-nav">
-                    <label class="hamburger-icon" for="hamburger">
-                        <span class="visually-hidden">Menu hamburger bars</span>
-                        <img src="../assets/Hamburger-menu.png" alt="Menu hamburger bars" class="hamburger-icon">
-                    </label>
-                    <input id="hamburger" type="checkbox">
-
-                    <ul id="main-menu">
-                        <li><a href="../html/MenCollection.html">MEN</a></li>
-                        <li><a href="../html/WomenCollection.html">WOMEN</a></li>
-                        <li><a href="../html/AboutUs.html">ABOUT</a></li>
-                        <li><a href="../html/Privacy&Terms.html">CONTACT</a></li>
-                        <li><a href="../html/Cart.html">CART(0)</a></li>
-                    </ul>
-                </nav>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
             </div>
-        </header>
-        <section id="banner">
-            <img src="../assets/cart.jpg"
-                alt="Athletic muscular young man in sports outfit is jogging in the street on a rain">   
-       <h1 class="details">Complete Your Order Now</h1>
-            </section>
-<div class="cart-container">
-    <h2>Shopping Cart Details</h2>
-    <div class="product-info">
-    <img src="../assets/Softshell-Jacket.jpg" alt="Softshell Running Jacket" class="product-image">
-    <div class="product-details">
-        <h3>Softshell Running Jacket</h3>
-        <p>Color: Dark Grey</p>
-        <p>Price: $179</p>
-    </div>
-        <div class="quantity">
-            <h3>Quantity :</h3>
-            <button>-</button>
-            <span class="btn">1</span>
-            <button>+</button>
-    </div>
-</div>
-</div>
-<div class="total">
-    Total:$179
-</div>
-<section class="form-container">
-    <form>
-        <h2>Contact Information</h2>
-        <div>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required>
+            <div>
+                <label for="phone">Phone:</label><br>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <h2>Delivery Information</h2>
+            <div>
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+            </div>
+            <div>
+                <label for="lname">Last Name:</label><br>
+                <input type="text" id="lname" name="lname"><br>
+            </div>
+            <div>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address"><br>
+            </div>
+            <div>
+                <label for="postcode">postcode:</label><br>
+                <input type="text" id="postcode" name="postcode"><br>
+            </div>
+            <div>
+                <label for="city">City</label><br>
+                <input type="text" id="city" name="city">
+            </div>
+            <div>
+                <label for="country">Country</label><br>
+                <input type="text" id="country" name="country">
+            </div>
+            <div>
+                <button class="button">Submit</button>
+            </div>
+        </form>
+    </section>
+    <div class="payment-container">
+        <h2>Payment Method</h2>
+        <ul>
+            <li>
+                <input type="checkbox" id="paypal" name="payment" value="PayPal">
+                <label for="paypal">PayPal Express Checkout</label>
+            </li>
+            <li>
+                <input type="checkbox" id="creditcard" name="payment" value="Credit Card">
+                <label for="creditcard">Credit Card payment</label>
+            </li>
+            <li>
+                <input type="checkbox" id="applepay" name="payment" value="Apple Pay">
+                <label for="applepay">Apple Pay payment</label>
+            </li>
+        </ul>
+        <div class="data-usage">
+            <p>Your personal data will be used to process your order, support your experience throughout this website,
+                and for other purposes described in our <a href="../html/Privacy&Terms.html">Privacy Policy</a>.</p>
+            <p>Please ensure someone is able to sign for this parcel as all orders require a signature.</p>
         </div>
-        <div>
-            <label for="phone">Phone:</label><br>
-            <input type="tel" id="phone" name="phone" required>
-        </div>
-        <h2>Delivery Information</h2>
-        <div>
-        <label for="fname">First Name:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        </div>
-        <div>
-        <label for="lname">Last Name:</label><br>
-        <input type="text" id="lname" name="lname"><br>
-        </div>
-        <div> 
-            <label for="address">Address:</label><br>
-            <input type="text" id="address" name="address"><br>
-        </div>
-        <div>
-            <label for="postcode">postcode:</label><br>
-            <input type="text" id="postcode" name="postcode"><br>
-        </div>
-        <div>
-            <label for="city">City</label><br>
-            <input type="text" id="city" name="city">
-        </div>
-<div>
-    <label for="country">Country</label><br>
-    <input type="text" id="country" name="country">
-</div>
-<div>
-    <button class="button">Submit</button>
-</div>
-    </form>     
-</section>
-<div class="payment-container">
-    <h2>Payment Method</h2>
-    <ul>
-        <li>
-        <input type="checkbox" id="paypal" name="payment" value="PayPal">
-        <label for="paypal">PayPal Express Checkout</label>
-    </li>
-    <li>
-        <input type="checkbox" id="creditcard" name="payment" value="Credit Card">
-        <label for="creditcard">Credit Card payment</label>
-    </li>
-    <li>
-        <input type="checkbox" id="applepay" name="payment" value="Apple Pay">
-        <label for="applepay">Apple Pay payment</label>
-    </li>
-    </ul>
-    <div class="data-usage">
-        <p>Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a href="../html/Privacy&Terms.html">Privacy Policy</a>.</p>
-        <p>Please ensure someone is able to sign for this parcel as all orders require a signature.</p>
-    </div>
-    <div class="terms-conditions">
-         <input type="checkbox" id="agree"><label for="agree">I have read and agree to the website <a href="../html/Privacy&Terms.html">Terms and Conditions</a>.</label>
-       
-    </div>
-</div>
+        <div class="terms-conditions">
+            <input type="checkbox" id="agree"><label for="agree">I have read and agree to the website <a
+                    href="../html/Privacy&Terms.html">Terms and Conditions</a>.</label>
 
-<div class="order-summary">
-    <h2>Order Summary</h2>
-<div class="item">
-    <span class="name">1x Softshell Running Jacket</span>
-    <span class="price">$179</span>
-</div>
-<div class="subtotal">
-    <span class="label">Subtotal</span>
-    <span class="amount">$179</span>
-</div>
-<div class="shipping">
-    <span class="label">Shipping</span>
-    <span class="amount">$179</span>
-</div>
-<div class="total">
-    <span class="label">Total</span>
-    <span class="amount">$179</span>
-</div>
-<div class="check-order">
-    <a href="../html/ordersuccess.html" class="button">Check Out</a>
-</div>
+        </div>
+    </div>
 
-</div>
-        <footer>
-            <div class="footer-wrapper">
-                <div class="footer-section">
-                    <h4>Follow Us:</h4>
-                    <div class="social-icons">
-                        <img src="../assets/facebook-logo_icon.png" alt="Facebook Logo">
-                        <img src="../assets/twitter_icon.png" alt="Twitter Logo">
-                        <img src="../assets/instagram_icon.png" alt="Instagram Logo">
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <img src="../assets/RainyDays_Logo.png" alt="RainyDays Logo">
-                </div>
-                <div class="terms-privacy">
-                    <h3><a href="../html/Privacy&Terms.html">Terms & Conditions</a></h3>
-                    <p>© 2024 Rainy Days. All Rights Reserved.</p>
+    <div class="order-summary">
+        <h2>Order Summary</h2>
+        <div class="item">
+            <span class="name">1x Softshell Running Jacket</span>
+            <span class="price">$179</span>
+        </div>
+        <div class="subtotal">
+            <span class="label">Subtotal</span>
+            <span class="amount">$179</span>
+        </div>
+        <div class="shipping">
+            <span class="label">Shipping</span>
+            <span class="amount">$179</span>
+        </div>
+        <div class="total">
+            <span class="label">Total</span>
+            <span class="amount">$179</span>
+        </div>
+        <div class="check-order">
+            <a href="../html/ordersuccess.html" class="button">Check Out</a>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-section">
+                <h4>Follow Us:</h4>
+                <div class="social-icons">
+                    <img src="../assets/facebook-logo_icon.png" alt="Facebook Logo">
+                    <img src="../assets/twitter_icon.png" alt="Twitter Logo">
+                    <img src="../assets/instagram_icon.png" alt="Instagram Logo">
                 </div>
             </div>
-        </footer>
+            <div class="footer-section">
+                <img src="../assets/RainyDays_Logo.png" alt="RainyDays Logo">
+            </div>
+            <div class="terms-privacy">
+                <h3><a href="../html/Privacy&Terms.html">Terms & Conditions</a></h3>
+                <p>© 2024 Rainy Days. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
