@@ -62,6 +62,9 @@
   .size-dropdown-content a:hover {
     background-color: #c24949;
   }
+  .add-to-cart button{
+    margin-bottom: 5px;
+  }
   
   #banner-image{
     width: 100%;
