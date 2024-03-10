@@ -200,7 +200,6 @@ li:hover a {
 
 .button {
   background-color: orange;
-  color: black;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -319,4 +318,8 @@ button a {
 
 a {
   text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: #233c69;
 }
