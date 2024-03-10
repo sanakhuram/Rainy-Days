@@ -192,7 +192,7 @@ li:hover a {
   gap: 10px;
   margin-bottom: 20px;
 }
-button {
+.button {
     background-color: orange;
     color: white;
     padding: 10px 20px;
@@ -211,7 +211,7 @@ button {
 }
 
 /* Button Hover Effect */
-button:hover {
+.button:hover {
     background-color: darkorange;
 }
 
