@@ -271,22 +271,22 @@ button a {
   text-decoration: none;
   color: rgb(205, 50, 50);
 }
+.footer-section p{
+  text-align: center;
+}
 
 .footer-section h4 {
   text-align: center;
-  font-family: "Karla", sans-serif;
   padding: 15px;
 }
 
 .terms-privacy h3 {
-  font-family: "Karla", sans-serif;
   text-align: center;
   padding: 20px;
 }
 
 .terms-privacy p {
   text-align: center;
-  font-family: "Karla", sans-serif;
   font-size: 15px;
 }
 
