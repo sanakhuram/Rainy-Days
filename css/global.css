@@ -145,7 +145,7 @@ li:hover a {
 }
 
 
-/*.heading-over-image {
+.heading-over-image {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -154,7 +154,7 @@ li:hover a {
   color: #D1EB4B;
   font-size: 60px;
   font-family: "Karla", sans-serif;
-}*/
+}
 
 #banner {
   display: flex;
