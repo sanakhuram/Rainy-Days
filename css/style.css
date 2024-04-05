@@ -214,7 +214,7 @@ p {
 }
 
 /*--Men Collection--*/
-.grid-container {
+/*.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
@@ -254,7 +254,7 @@ p {
 
 .price {
     color: #666;
-}
+}*/
 
 h1 {
     text-align: center;
