@@ -1,8 +1,6 @@
 const URL = 'https://api.noroff.dev/api/v1/rainy-days';
-
-
-let products = []; // Declare products array globally
-let cartArray = []; // Declare cartArray globally
+let products = [];
+let cartArray = [];
 
 const fetchProducts = async (url) => {
     try {
@@ -24,15 +22,15 @@ const displayProducts = async () => {
         const productContainer = document.querySelector('.products');
 
         products.forEach(product => {
-            product.quantity = 1; // Initialize quantity property
+            product.quantity = 1;
             productContainer.innerHTML +=
                 `
-                <div class="product">
+                <div class="product" data-product-id="${product.id}">
                     <h2>${product.title}</h2>
                     <p>${product.description}</p>
                     <img src="${product.image}" alt="${product.title}">
                     <div class="product-price">$${product.price.toFixed(2)}</div>
-                    <button class="product-button" data-product="${product.id}">Add to Cart</button>
+                    <button class="add-to-cart-button" data-product-id="${product.id}">Add to Cart</button>
                 </div>
                 `;
         });
@@ -44,60 +42,28 @@ const displayProducts = async () => {
 document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
     
-    document.addEventListener('click', (event) => {
-        if (event.target.classList.contains('product-button')) {
-            const productId = event.target.dataset.product;
+    const productsContainer = document.querySelector('.products');
+    const cartCount = document.querySelector(".cart-count");
+    
+    productsContainer.addEventListener('click', (event) => {
+        const addToCartButton = event.target.closest('.add-to-cart-button');
+        if (addToCartButton) {
+            const productId = addToCartButton.dataset.productId;
             const selectedProduct = products.find(product => product.id === productId);
-            cartArray.push(selectedProduct); 
-            showCart(cartArray); 
+            cartArray.push(selectedProduct);
             updateCartCounter(cartArray.length);
-        } else if (event.target.classList.contains('add-button')) {
-            const productId = event.target.dataset.product;
-            const cartItem = cartArray.find(item => item.id === productId);
-            if (cartItem) {
-                cartItem.quantity++;
-                showCart(cartArray);
-            }
-        } else if (event.target.classList.contains('subtract-button')) {
-            const productId = event.target.dataset.product;
-            const cartItem = cartArray.find(item => item.id === productId);
-            if (cartItem && cartItem.quantity > 1) {
-                cartItem.quantity--;
-                showCart(cartArray);
-            }
+            localStorage.setItem('cart', JSON.stringify(cartArray));
+            
+            // Change cart count color
+            cartCount.classList.add('cart-count-added');
+            setTimeout(() => {
+                cartCount.classList.remove('cart-count-added');
+            }, 1000); 
         }
     });
 });
-
-function showCart(cartItems) {
-    const cart = document.querySelector(".cart");
-    const cartList = document.querySelector(".cart-list");
-    const totalContainer = document.querySelector(".total");
-    
-    cart.style.display = "block";
-    cartList.innerHTML = "";
-    let total = 0;
-    
-    cartItems.forEach(function (cartElement) {
-        cartList.innerHTML +=
-            `
-            <div class="cart-item">
-                <h4>${cartElement.title}</h4>
-                <img src="${cartElement.image}" alt="${cartElement.title}">
-                <div>
-                    <button class="subtract-button" data-product="${cartElement.id}">-</button>
-                    <span>${cartElement.quantity}</span>
-                    <button class="add-button" data-product="${cartElement.id}">+</button>
-                </div>
-            </div>
-            `;
-        total += cartElement.price * cartElement.quantity; // Update total based on quantity
-    });
-    totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
-}
 
 function updateCartCounter(count) {
     const cartCounter = document.querySelector(".cart-count");
     cartCounter.textContent = `CART(${count})`;
 }
-

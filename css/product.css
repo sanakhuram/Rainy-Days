@@ -152,7 +152,7 @@ form textarea {
 }
 
 
-/*----Cart---*/
+/*----Cart---
 .cart-container {
     margin: 0 auto;
     border: 1px solid darkgreen;
@@ -202,15 +202,7 @@ form textarea {
     font-size: 18px;
 }
 
-.total {
-    font-weight: bold;
-    text-align: right;
-    margin-top: 20px;
-    border-top: 1px solid rgb(66, 68, 66);
-    font-size: 24px;
-    margin-right: 20px;
-    margin-bottom: 30px;
-}
+
 
 .cart-container h2 {
     border-bottom: 1px solid rgb(46, 49, 46);
@@ -248,7 +240,7 @@ form textarea {
         font-size: 20px;
     }
 }
-
+--*/
 
 .payment-container {
     margin: 20px auto;
@@ -343,3 +335,5 @@ input[type="checkbox"] {
 .terms p {
     font-size: 18px;
 }
+
+

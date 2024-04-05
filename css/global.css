@@ -117,6 +117,8 @@ li:hover a {
   border: 0;
 }
 
+
+
 /** Media queries */
 @media (min-width: 920px) {
   .hamburger-icon {
@@ -324,3 +326,5 @@ a {
 a:hover{
   color: #233c69;
 }
+
+

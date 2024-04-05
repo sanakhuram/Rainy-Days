@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="This page aims to show selected products in cart">
     <title>Shopping Cart</title>
-    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/cart.css">
 </head>
 
 <body>
@@ -41,6 +41,12 @@
     </section>
     <div class="cart-container">
         <h2>Shopping Cart Details</h2>
+
+        <div class="cart">
+            <div class="cart-list"></div>
+            <div class="total">Total:</div>
+           
+        </div>
       <!--- <div class="product-info">
             <img src="../assets/Softshell-Jacket.jpg" alt="Softshell Running Jacket" class="product-image">
             <div class="product-details">
@@ -55,10 +61,10 @@
                 <button>+</button>
             </div>
         </div>
-    </div>-->
-    <div class="total">
-        <!--Total:$179-->
     </div>
+    <div class="total">
+       Total:$179
+    </div>-->
     <section class="form-container">
         <form>
             <h2>Contact Information</h2>
@@ -127,9 +133,12 @@
 
         </div>
     </div>
-
-    <div class="order-summary">
-       <!---- <h2>Order Summary</h2>
+    <div class="checkout-button-container">
+        <a href="../html/ordersuccess.html" class="checkout-button">Checkout</a>
+    </div>
+    
+     <!----<div class="order-summary">
+       <h2>Order Summary</h2>
         <div class="item">
             <span class="name">1x Softshell Running Jacket</span>
             <span class="price">$179</span>
