@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cartArray.push(selectedProduct);
             }
             updateCartCounter(cartArray.length);
-            // Update local storage
+            
             localStorage.setItem('cart', JSON.stringify(cartArray));
         } else if (event.target.classList.contains('increment-button')) {
             const productId = event.target.dataset.product;
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cartItem) {
                 cartItem.quantity++;
                 showCart(cartArray);
-                // Update local storage
+               
                 localStorage.setItem('cart', JSON.stringify(cartArray));
             }
         } else if (event.target.classList.contains('decrement-button')) {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (cartItem && cartItem.quantity > 1) {
                 cartItem.quantity--;
                 showCart(cartArray);
-                // Update local storage
+               
                 localStorage.setItem('cart', JSON.stringify(cartArray));
             }
         }
