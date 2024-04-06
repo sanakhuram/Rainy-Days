@@ -75,7 +75,7 @@
 }
 
 .green {
-    background-color: #365D3A;
+    background-color:  #0a3641;
 }
 
 .red {
@@ -258,7 +258,6 @@ p {
 
 h1 {
     text-align: center;
-    border-bottom: 1px solid black;
     font-size: 30px;
 }
 
@@ -289,6 +288,8 @@ h1 {
     flex-direction: row;
     align-items: center;
     width: 100%;
+    background-color: #d1ddc9;
+    padding-bottom: 30px;
 }
 
 .image-container,
@@ -353,8 +354,9 @@ h1 {
     justify-content: center;
     padding: 20px;
 }
-
-
+.checkbox-image{
+    padding-top: 20px;
+}
 .cart-count-added {
     color: rgb(216, 235, 11); /* Change to your desired color */
 }

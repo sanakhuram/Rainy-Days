@@ -147,16 +147,16 @@ li:hover a {
 }
 
 
-/*.heading-over-image {
+.heading-over-image {
   position: absolute;
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
-  color: #D1EB4B;
+  color: #0b0b0b;
   font-size: 60px;
   font-family: "Karla", sans-serif;
-}*/
+}
 
 #banner {
   display: flex;

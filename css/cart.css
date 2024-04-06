@@ -1,6 +1,8 @@
 
 @import url(./global.css);
-
+h2{
+    text-align: center;
+}
 form {
     max-width: 1200px;
     padding: 40px;
