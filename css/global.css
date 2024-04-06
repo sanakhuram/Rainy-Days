@@ -103,9 +103,15 @@ li a {
   text-align: center;
 }
 
-li:hover a {
-  color: rgba(255, 187, 0, 0.986);
+li:hover {
+  background-color: rgb(251, 188, 14); 
 }
+
+li.active  {
+  background-color: rgba(248, 186, 16, 0.986); 
+}
+
+
 
 .visually-hidden {
   position: absolute;

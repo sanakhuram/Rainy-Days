@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateCartCounter(cartArray.length);
             localStorage.setItem('cart', JSON.stringify(cartArray));
             
-            // Change cart count color
+         
             cartCount.classList.add('cart-count-added');
             setTimeout(() => {
                 cartCount.classList.remove('cart-count-added');
