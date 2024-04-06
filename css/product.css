@@ -1,5 +1,44 @@
 @import url(./global.css);
 
+#product-details {
+    display: flex;
+    margin: 20px;
+}
+
+.product-image {
+    flex: 1;
+}
+
+.product-image img {
+    max-width: 100%;
+}
+
+.product-info {
+    flex: 2;
+    padding: 0 20px;
+}
+
+.product-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    margin-bottom: 5px;
+}
+
+.product-info strong {
+    font-weight: bold;
+}
+
+.product-info p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+/*-----
 .product-section {
     background-color: rgb(233, 232, 232);
 }
@@ -71,7 +110,7 @@
 .size-dropdown-content a:hover {
     background-color: #c24949;
 }
-
+----*/
 .add-to-cart button {
     margin-bottom: 5px;
 }
