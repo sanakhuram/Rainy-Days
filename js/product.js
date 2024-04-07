@@ -37,6 +37,8 @@ async function renderSingleProduct() {
                 ${singleData.onSale ? `<p><strong>Discounted Price:</strong> $${singleData.discountedPrice.toFixed(2)}</p>` : ''}
             </div>
         `;
+
+        
     } catch (error) {
         console.error(error);
     }
