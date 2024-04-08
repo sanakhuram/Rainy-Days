@@ -22,7 +22,7 @@ const displayWomenProducts = async () => {
         const productContainer = document.querySelector('.products');
 
         products.forEach(product => {
-            if (product.gender.toLowerCase() === 'female') { // Filter only women's products
+            if (product.gender.toLowerCase() === 'female') {
                 product.quantity = 1;
                 productContainer.innerHTML +=
                     `
