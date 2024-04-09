@@ -113,6 +113,9 @@
     .green {
         flex-direction: column;
     }
+    .image-container img{
+        align-items: center;
+    }
 
     .container1 h2 {
         font-size: 20px;
@@ -138,6 +141,7 @@
     .container-sale {
         flex-direction: column;
     }
+ 
 }
 
 .article {
