@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function updateCartCounter(count) {
     const cartCounter = document.querySelector(".cart-count");
-    cartCounter.innerHTML = `<a href="../..basket/cart/index.html">CART(${count})</a>`;
+    cartCounter.innerHTML = `<a href="basket/cart/index.html">CART(${count})</a>`;
 
     cartCounter.textContent = `CART(${count})`;
 }

@@ -34,7 +34,7 @@ async function renderSingleProduct() {
                 <p><strong>Available Sizes:</strong> ${singleData.sizes.join(', ')}</p>
                 <p><strong>Base Color:</strong> ${singleData.baseColor}</p>
                 <p><strong>Price:</strong> $${singleData.price.toFixed(2)}</p>
-                ${singleData.onSale ? `<p><strong>Discounted Price:</strong> $${singleData.discountedPrice.toFixed(2)}</p>` : ''}
+               <p><strong style=color:red;>Discounted Price:</strong> $${singleData.discountedPrice.toFixed(2)}</p>
                 <button class="add-to-cart-button" data-product-id="${singleData.id}">Add to Cart</button>
             </div>
         `;
@@ -48,6 +48,7 @@ async function renderSingleProduct() {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderSingleProduct();
+
 });
 
 function addToCartClicked(event) {
@@ -61,4 +62,11 @@ function updateCartCount() {
     let currentCount = parseInt(cartCountElement.textContent.match(/\d+/)[0]);
     currentCount++;
     cartCountElement.textContent = `CART(${currentCount})`;
+}
+
+function updateCartCounter(count) {
+    const cartCounter = document.querySelector(".cart-count");
+    cartCounter.innerHTML = `<a href="../..basket/cart/index.html">CART(${count})</a>`;
+
+    cartCounter.textContent = `CART(${count})`;
 }

@@ -2,8 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartList = document.querySelector('.cart-list');
     const totalContainer = document.querySelector('.total');
     
+    
     // Retrieve cart items from local storage
-    let cartArray = []; // Define cartArray here
+    let cartArray = []; 
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
         cartArray = JSON.parse(storedCart);
