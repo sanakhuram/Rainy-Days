@@ -1,5 +1,4 @@
 const url = document.location;
-console.log({ url });
 const search = url.search;
 const params = new URLSearchParams(search);
 
@@ -18,6 +17,7 @@ async function fetchSingleProduct(id) {
         console.error(error);
     }
 }
+
 async function renderSingleProduct() {
     try {
         const id = params.get('id');
@@ -35,16 +35,30 @@ async function renderSingleProduct() {
                 <p><strong>Base Color:</strong> ${singleData.baseColor}</p>
                 <p><strong>Price:</strong> $${singleData.price.toFixed(2)}</p>
                 ${singleData.onSale ? `<p><strong>Discounted Price:</strong> $${singleData.discountedPrice.toFixed(2)}</p>` : ''}
+                <button class="add-to-cart-button" data-product-id="${singleData.id}">Add to Cart</button>
             </div>
         `;
 
-        
+        const addToCartButton = document.querySelector('.add-to-cart-button');
+        addToCartButton.addEventListener('click', addToCartClicked);
     } catch (error) {
         console.error(error);
     }
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     renderSingleProduct();
 });
+
+function addToCartClicked(event) {
+    const button = event.target;
+    const productId = button.dataset.productId;
+    updateCartCount();
+}
+
+function updateCartCount() {
+    const cartCountElement = document.querySelector('.cart-count');
+    let currentCount = parseInt(cartCountElement.textContent.match(/\d+/)[0]);
+    currentCount++;
+    cartCountElement.textContent = `CART(${currentCount})`;
+}
