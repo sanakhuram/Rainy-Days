@@ -1,10 +1,13 @@
+
 const url = document.location;
 const search = url.search;
 const params = new URLSearchParams(search);
 
+
 async function fetchSingleProduct(id) {
     if (!id) throw new Error("Product ID is undefined");
     const productUrl = `https://api.noroff.dev/api/v1/rainy-days/${id}`;
+  
     try {
         const response = await fetch(productUrl);
         if (response.ok) {
@@ -54,19 +57,29 @@ document.addEventListener('DOMContentLoaded', () => {
 function addToCartClicked(event) {
     const button = event.target;
     const productId = button.dataset.productId;
+    addToCart(productId)
     updateCartCount();
 }
+function addToCart(productId) {
+
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingItemIndex = cartItems.findIndex(item => item.id === productId);
+    if (existingItemIndex !== -1) {
+
+        cartItems[existingItemIndex].quantity++;
+    } else {
+
+        cartItems.push({ id: productId, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+}
+
 
 function updateCartCount() {
     const cartCountElement = document.querySelector('.cart-count');
     let currentCount = parseInt(cartCountElement.textContent.match(/\d+/)[0]);
     currentCount++;
     cartCountElement.textContent = `CART(${currentCount})`;
-}
-
-function updateCartCounter(count) {
-    const cartCounter = document.querySelector(".cart-count");
-    cartCounter.innerHTML = `<a href="../..basket/cart/index.html">CART(${count})</a>`;
-
-    cartCounter.textContent = `CART(${count})`;
 }
