@@ -29,7 +29,8 @@ const displayMenProducts = async () => {
                     <div class="product" data-product-id="${product.id}">
                         <h2>${product.title}</h2>
                         <p>${product.description}</p>
-                        <a href="../product/index.html/?id=${product.id}">
+                        <a href="../product/index.html?id=${product.id}">
+
                         <img src="${product.image}" alt="${product.title}">
                     </a>
                         <div class="product-price">$${product.price.toFixed(2)}</div>
