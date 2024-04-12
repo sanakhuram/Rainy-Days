@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function showCart(cartItems) {
         cartList.innerHTML = "";
         let total = 0;
-
+    
         cartItems.forEach(function (cartElement) {
             cartList.innerHTML +=
                 `
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
     }
-
+    
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('increment-button')) {
             const productId = event.target.dataset.product;
