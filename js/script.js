@@ -43,3 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     displayProducts();
 });
 
+function updateCartCounter(count) {
+    const cartCounter = document.querySelector(".cart-count");
+    cartCounter.innerHTML = `<a href="../basket/cart/index.html/">CART(${count})</a>`;
+
+    cartCounter.textContent = `CART(${count})`;
+}
