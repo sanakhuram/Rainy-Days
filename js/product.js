@@ -1,8 +1,6 @@
-
 const url = document.location;
 const search = url.search;
 const params = new URLSearchParams(search);
-
 
 async function fetchSingleProduct(id) {
     if (!id) throw new Error("Product ID is undefined");
@@ -38,7 +36,7 @@ async function renderSingleProduct() {
                 <p><strong>Base Color:</strong> ${singleData.baseColor}</p>
                 <p><strong>Price:</strong> $${singleData.price.toFixed(2)}</p>
                <p><strong style=color:red;>Discounted Price:</strong> $${singleData.discountedPrice.toFixed(2)}</p>
-                <button class="add-to-cart-button" data-product-id="${singleData.id}">Add to Cart</button>
+                <button class="add-to-cart-button" data-product-id="${singleData.id}" data-title="${singleData.title}" data-image="${singleData.image}" data-price="${singleData.price.toFixed(2)}">Add to Cart</button>
             </div>
         `;
 
@@ -51,31 +49,34 @@ async function renderSingleProduct() {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderSingleProduct();
-
 });
 
 function addToCartClicked(event) {
     const button = event.target;
     const productId = button.dataset.productId;
-    addToCart(productId)
+    const title = button.dataset.title;
+    const image = button.dataset.image;
+    const price = button.dataset.price;
+    addToCart(productId, title, image, price);
     updateCartCount();
 }
-function addToCart(productId) {
 
+function addToCart(productId, title, image, price) {
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-
     const existingItemIndex = cartItems.findIndex(item => item.id === productId);
     if (existingItemIndex !== -1) {
-
         cartItems[existingItemIndex].quantity++;
     } else {
-
-        cartItems.push({ id: productId, quantity: 1 });
+        cartItems.push({ 
+            id: productId, 
+            title: title, 
+            image: image, 
+            price: price, 
+            quantity: 1 
+        });
     }
-
     localStorage.setItem('cart', JSON.stringify(cartItems));
 }
-
 
 function updateCartCount() {
     const cartCountElement = document.querySelector('.cart-count');

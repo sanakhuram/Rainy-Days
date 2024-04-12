@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartList = document.querySelector('.cart-list');
     const totalContainer = document.querySelector('.total');
     
-    
-    // Retrieve cart items from local storage
     let cartArray = []; 
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
@@ -29,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 `;
-            total += cartElement.price * cartElement.quantity;
+            total += parseFloat(cartElement.price) * cartElement.quantity;
         });
         totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
     }

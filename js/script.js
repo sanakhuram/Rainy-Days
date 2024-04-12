@@ -1,6 +1,6 @@
 const URL = 'https://api.noroff.dev/api/v1/rainy-days';
 let products = [];
-let cartArray = [];
+
 
 const fetchProducts = async (url) => {
     try {
