@@ -167,29 +167,6 @@
     border-radius: 15px 0px;
 }
 
-article a {
-    color: black;
-}
-
-.jacket1,
-.jacket2,
-.jacket3,
-.jacket4,
-h2 {
-    text-align: center;
-    font-size: 24px;
-    padding: 20px;
-}
-
-.jacket1,
-.jacket2,
-.jacket3,
-.jacket4,
-p {
-    font-size: 20px;
-    padding: 20px;
-}
-
 
 .heading {
     color: black;
