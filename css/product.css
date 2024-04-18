@@ -1,9 +1,7 @@
 @import url(./global.css);
 
 /* Dropdown styles */
-.actions {
-    margin-top: 1rem;
-}
+
 .cart-dropdown {
     position: relative;
 }
@@ -14,14 +12,15 @@
     background-color:hwb(90 98% 0%);
     border-radius: 10px;
     border: 2px solid rgb(109, 121, 109);
-   width: 31rem;
+   min-width: 100px;
     max-height: 46rem;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 11;
    right: 3.2rem;
 }
 
-.cart-dropdown:hover .dropdown-content {
+.cart-dropdown:hover
+.dropdown-content {
     display: block;
 }
 
@@ -29,6 +28,16 @@
     padding: 10px;
 }
 
+.buy-button{
+    background-color: orange;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 10px; 
+}
 
 #product-details {
     display: flex;
@@ -98,6 +107,12 @@
 }
 
 @media screen and (max-width: 768px) {
+
+    .cart-dropdown .dropdown-content {
+        display: block;
+    
+    }
+    
     .container {
         flex-direction: column;
         padding: 20px;

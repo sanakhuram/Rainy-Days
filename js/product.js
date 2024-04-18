@@ -110,13 +110,14 @@ function updateCartCount() {
     const totalDiv = document.createElement('div');
     totalDiv.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
     dropdownContent.appendChild(totalDiv);
+    const buyButton = document.querySelector('.buy-button');
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
     renderSingleProduct();
     updateCartCount(); 
-
+  
 
         localStorage.removeItem('cart');
         updateCartCount(); 
