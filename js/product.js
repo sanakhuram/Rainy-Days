@@ -51,30 +51,42 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSingleProduct();
 });
 
-function addToCart(product) {
+function addToCartClicked(event) {
+    const button = event.target;
+    const productId = button.dataset.productId;
+    const title = button.dataset.title;
+    const image = button.dataset.image;
+    const price = button.dataset.price;
+    addToCart(productId, title, image, price);
+    updateCartCount();
+}
+
+function addToCart(productId, title, image, price) {
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingItem = cartItems.find(item => item.id === product.id);
-    if (existingItem) {
-        existingItem.quantity++;
+    const existingItemIndex = cartItems.findIndex(item => item.id === productId);
+    if (existingItemIndex !== -1) {
+        cartItems[existingItemIndex].quantity++;
     } else {
         cartItems.push({ 
-            id: product.id, 
-            title: product.title, 
-            image: product.image, 
-            price: product.price, 
+            id: productId, 
+            title: title, 
+            image: image, 
+            price: price, 
             quantity: 1 
         });
     }
     localStorage.setItem('cart', JSON.stringify(cartItems));
-    updateCartCount();
 }
+
 function updateCartCount() {
     const cartCountElement = document.querySelector('.cart-count');
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     let currentCount = cartItems.reduce((total, item) => total + item.quantity, 0);
     cartCountElement.textContent = `CART(${currentCount})`;
 
+    const cartDropdown = document.querySelector('.cart-dropdown');
     const dropdownContent = document.querySelector('.dropdown-content');
+
     dropdownContent.innerHTML = '';
 
     cartItems.forEach(item => {
@@ -87,6 +99,8 @@ function updateCartCount() {
         image.style.borderRadius='0 10px'
         cartItemDiv.appendChild(image);
         const textNode = document.createTextNode(`${item.title} - Quantity: ${item.quantity}`);
+        
+
         cartItemDiv.appendChild(textNode);
 
         dropdownContent.appendChild(cartItemDiv);
@@ -96,6 +110,16 @@ function updateCartCount() {
     const totalDiv = document.createElement('div');
     totalDiv.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
     dropdownContent.appendChild(totalDiv);
+    const buyButton = document.querySelector('.buy-button');
 }
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderSingleProduct();
+    updateCartCount(); 
+  
+
+        localStorage.removeItem('cart');
+        updateCartCount(); 
+    });
 
