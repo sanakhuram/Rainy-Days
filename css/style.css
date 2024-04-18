@@ -325,3 +325,31 @@ h1 {
  .heading{
     text-align: center;
  }
+
+ .heading-over-image1 {
+    overflow: hidden; 
+    white-space: nowrap; 
+    animation: typing 2s steps(40, end), blink-caret 0.5s step-end infinite; 
+    animation-fill-mode: forwards; 
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #0b0b0b;
+    font-size: 60px;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+
+  @media only screen and (min-width: 240px) and (max-width: 900px) and (min-resolution: 2dppx) {
+    .heading-over-image1 {
+      font-size: 20px;
+      text-align: center;
+      padding-top: 70px;
+    }
+}
