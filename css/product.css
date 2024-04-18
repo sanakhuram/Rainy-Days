@@ -9,7 +9,7 @@
 .cart-dropdown .dropdown-content {
     display: none;
     position: fixed;
-    background-color:hwb(96 58% 31%);
+    background-color:#616a61;
     
     border: 2px solid rgb(109, 121, 109);
    min-width: 100px;
