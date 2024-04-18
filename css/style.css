@@ -301,19 +301,27 @@ h1 {
     width: 100px;
     height: auto;
     margin-bottom: 20px;
-    animation: scaleCheckmark 1s infinite alternate; 
+    opacity: 0;
+    visibility: hidden;
+    animation: appearCheckmark 1s infinite alternate;
+    animation-delay: 2s; 
 }
 
-@keyframes scaleCheckmark {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
+@keyframes appearCheckmark {
+    0% { 
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1);
+     }
+    100% { 
+        transform: scale(1.1);
+    opacity: 1;
+visibility: visible; 
+}
 }
 
 
 
-.cart-count-added {
-    color: rgb(216, 235, 11); 
-}
 
 .message-container {
     display: none; 
