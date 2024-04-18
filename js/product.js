@@ -80,7 +80,45 @@ function addToCart(productId, title, image, price) {
 
 function updateCartCount() {
     const cartCountElement = document.querySelector('.cart-count');
-    let currentCount = parseInt(cartCountElement.textContent.match(/\d+/)[0]);
-    currentCount++;
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let currentCount = cartItems.reduce((total, item) => total + item.quantity, 0);
     cartCountElement.textContent = `CART(${currentCount})`;
+
+    const cartDropdown = document.querySelector('.cart-dropdown');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    dropdownContent.innerHTML = '';
+
+    cartItems.forEach(item => {
+        const cartItemDiv = document.createElement('div');
+
+        const image = document.createElement('img');
+        image.src = item.image;
+        image.alt = item.title;
+        image.style.width = '70px'
+        image.style.borderRadius='0 10px'
+        cartItemDiv.appendChild(image);
+        const textNode = document.createTextNode(`${item.title} - Quantity: ${item.quantity}`);
+        
+
+        cartItemDiv.appendChild(textNode);
+
+        dropdownContent.appendChild(cartItemDiv);
+    });
+
+    const totalPrice = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    const totalDiv = document.createElement('div');
+    totalDiv.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
+    dropdownContent.appendChild(totalDiv);
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderSingleProduct();
+    updateCartCount(); 
+
+
+        localStorage.removeItem('cart');
+        updateCartCount(); 
+    });
+

@@ -18,9 +18,11 @@ const fetchProducts = async (url) => {
 
 const displayMenProducts = async () => {
     try {
+        
+        showLoadingIndicator();
         products = await fetchProducts(URL);
         const productContainer = document.querySelector('.products');
-
+       
         products.forEach(product => {
             if (product.gender.toLowerCase() === 'male') { 
                 product.quantity = 1;
@@ -38,18 +40,22 @@ const displayMenProducts = async () => {
                     `;
             }
         });
+        hideLoadingIndicator();
     } catch (error) {
         console.error(error);
+        hideLoadingIndicator();
     }
 }
-
+function showLoadingIndicator() {
+    const loadingIndicator = document.querySelector('.loading');
+    loadingIndicator.classList.add('show');
+}
+function hideLoadingIndicator() {
+    const loadingIndicator = document.querySelector('.loading');
+    loadingIndicator.classList.remove('show');
+}
 document.addEventListener('DOMContentLoaded', () => {
     displayMenProducts();
 });
 
-function updateCartCounter(count) {
-    const cartCounter = document.querySelector(".cart-count");
-    cartCounter.innerHTML = `<a href="../basket/cart/index.html/">CART(${count})</a>`;
 
-    cartCounter.textContent = `CART(${count})`;
-}

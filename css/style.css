@@ -217,48 +217,7 @@ p {
 
 }
 
-/*--Men Collection--*/
-/*.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 20px;
-    background-color: #f0f0f0;
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 1000px;
-    margin-bottom: 50px;
-    place-items: center;
-}
 
-.grid-item {
-    text-align: center;
-    width: 100%;
-    place-items: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.grid-item:hover img {
-    transform: scale(1.1);
-}
-
-.grid-item img {
-    height: 400px;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.3s;
-}
-
-.jacket-name {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.price {
-    color: #666;
-}*/
 
 h1 {
     text-align: center;
@@ -292,7 +251,7 @@ h1 {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    background-color: #d1ddc9;
+    background-color: hwb(95deg 70.62% 23.94%);
     padding-bottom: 30px;
 }
 
@@ -363,5 +322,8 @@ h1 {
     padding-top: 20px;
 }
 .cart-count-added {
-    color: rgb(216, 235, 11); /* Change to your desired color */
+    color: rgb(216, 235, 11); 
 }
+ .heading{
+    text-align: center;
+ }

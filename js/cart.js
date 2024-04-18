@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const cartList = document.querySelector('.cart-list');
     const totalContainer = document.querySelector('.total');
+    const loadingIndicator = document.querySelector('.loading');
+    const checkoutButton = document.querySelector('.checkout-button');
     
     let cartArray = []; 
     const storedCart = localStorage.getItem('cart');
@@ -12,24 +14,31 @@ document.addEventListener('DOMContentLoaded', () => {
     function showCart(cartItems) {
         cartList.innerHTML = "";
         let total = 0;
-    
-        cartItems.forEach(function (cartElement) {
-            cartList.innerHTML +=
-                `
-                <div class="cart-item">
-                    <h4>${cartElement.title}</h4>
-                    <img src="${cartElement.image}" alt="${cartElement.title}">
-                    <div class="quantity-buttons">
-                        <button class="remove-button" data-product="${cartElement.id}">Remove</button>
-                        <button class="decrement-button" data-product="${cartElement.id}">-</button>
-                        <span>${cartElement.quantity}</span>
-                        <button class="increment-button" data-product="${cartElement.id}">+</button>
+
+        loadingIndicator.style.display = 'block'; 
+
+        setTimeout(() => { 
+            cartItems.forEach(function (cartElement) {
+                cartList.innerHTML +=
+                    `
+                    <div class="cart-item">
+                        <h4>${cartElement.title}</h4>
+                        <img src="${cartElement.image}" alt="${cartElement.title}">
+                        <div class="quantity-buttons">
+                            <button class="remove-button" data-product="${cartElement.id}">Remove</button>
+                            <button class="decrement-button" data-product="${cartElement.id}">-</button>
+                            <span>${cartElement.quantity}</span>
+                            <button class="increment-button" data-product="${cartElement.id}">+</button>
+                        </div>
                     </div>
-                </div>
-                `;
-            total += parseFloat(cartElement.price) * cartElement.quantity;
-        });
-        totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
+                    `;
+                total += parseFloat(cartElement.price) * cartElement.quantity;
+            });
+
+            totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
+            
+            loadingIndicator.style.display = 'none';
+        }, 1000);
     }
     
     document.addEventListener('click', (event) => {
@@ -56,6 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 cartArray.splice(cartItemIndex, 1);
                 showCart(cartArray);
                 localStorage.setItem('cart', JSON.stringify(cartArray));
+            }
+            else if (event.target === checkoutButton) {
+                alert('Your order is being processed.');
             }
         }
     });

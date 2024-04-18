@@ -18,6 +18,7 @@ const fetchProducts = async (url) => {
 
 const displayWomenProducts = async () => {
     try {
+        showLoadingIndicator();
         products = await fetchProducts(URL);
         const productContainer = document.querySelector('.products');
 
@@ -37,17 +38,24 @@ const displayWomenProducts = async () => {
                     `;
             }
         });
+        hideLoadingIndicator();
     } catch (error) {
         console.error(error);
+        hideLoadingIndicator();
     }
+}
+
+function showLoadingIndicator() {
+    const loadingIndicator = document.querySelector('.loading');
+    loadingIndicator.classList.add('show');
+}
+function hideLoadingIndicator() {
+    const loadingIndicator = document.querySelector('.loading');
+    loadingIndicator.classList.remove('show');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     displayWomenProducts();
 });
 
-function updateCartCounter(count) {
-    const cartCounter = document.querySelector(".cart-count");
 
-    cartCounter.textContent = `CART(${count})`;
-}

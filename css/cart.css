@@ -215,23 +215,50 @@ input[type="checkbox"] {
 }
 
 .checkout-button {
-    background-color: green;
-    color: white;
+    background-color:orange;
+    color: rgb(15, 15, 15);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+    font-weight: bold;
     margin: 10px;
 }
 
 .checkout-button:hover {
-    background-color: darkgreen;
+    background-color: darkorange;
 }
 
 
 
 
+.loading {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; 
+    height: 10px; 
+}
+
+.loading-bar {
+    height: 100%;
+    width: 0;
+    background-color: #dd7b39; 
+    animation: loading 2s infinite; 
+}
+
+@keyframes loading {
+    0% { width: 0; }
+    50% { width: 100%; }
+    100% { width: 0; }
+}
+
+.loading.show {
+    display: block;
+}
 
 

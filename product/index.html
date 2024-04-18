@@ -30,7 +30,14 @@
                     <li><a href="../html/WomenCollection.html">WOMEN</a></li>
                     <li><a href="../html/AboutUs.html">ABOUT</a></li>
                     <li><a href="../html/Privacy&Terms.html">CONTACT</a></li>
-                    <li><a href="../basket/cart/index.html" class="cart-count">CART(0)</a></li>
+                    <li class="cart-dropdown">
+                    <a href="../basket/cart/index.html" class="cart-count">CART(0)</a>
+                    <div class="dropdown-content">
+                        <div id="cart-item"></div>
+                        <div id="cart-total"></div>
+                        <button id="buy-button">Buy</button> 
+                    </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -43,40 +50,6 @@
         </h1>
     </section>
     <div id="product-details"></div>
-
-    <!--<section class="product-section">
-        <div class="container">
-            <div class="jacket-image">
-                <img src="../assets/Softshell-Jacket.jpg" alt="Black and grey Soft shell jacket image">
-                <h2 class="price">$179</h2>
-            </div>
-            <div class="info">
-                <h1>Softshell Running Jacket</h1>
-                <h1>Dark Grey</h1>
-                <p>"Stay dry and stylish in this water-resistant jacket with a comfortable and lightweight design,
-                    tailored for your active lifestyle. Whether you're hitting the trails or running errands, this
-                    versatile jacket keeps you protected from the elements while ensuring breathability and freedom
-                    of movement.</p>
-                <p> Its sleek silhouette and modern features make it a go-to choice for outdoor adventures and
-                    everyday wear. Elevate your wardrobe with this essential piece that combines functionality and
-                    fashion effortlessly."</p>
-
-
-                <a href="../html/Cart.html" class="button">Add to Cart
-                </a>
-
-
-                <div class="size-dropdown">
-                    <button class="button">Select Size</button>
-                    <div class="size-dropdown-content">
-                        <a href="#">Small</a>
-                        <a href="#">Medium</a>
-                        <a href="#">Large</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
     <section id="contact">
         <h2>Contact Us</h2>
         <form>
