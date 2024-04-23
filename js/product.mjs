@@ -1,10 +1,13 @@
+
+import { URL } from "./constants.mjs";
+
 const url = document.location;
 const search = url.search;
 const params = new URLSearchParams(search);
 
 async function fetchSingleProduct(id) {
     if (!id) throw new Error("Product ID is undefined");
-    const productUrl = `https://api.noroff.dev/api/v1/rainy-days/${id}`;
+    const productUrl = `${URL}/${id}`;
   
     try {
         const response = await fetch(productUrl);

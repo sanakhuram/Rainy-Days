@@ -1,4 +1,4 @@
-const URL = 'https://api.noroff.dev/api/v1/rainy-days';
+import { URL } from "./constants.mjs";
 let products = [];
 let cartArray = [];
 
@@ -16,14 +16,15 @@ const fetchProducts = async (url) => {
     }
 }
 
-const displayWomenProducts = async () => {
+const displayMenProducts = async () => {
     try {
+        
         showLoadingIndicator();
         products = await fetchProducts(URL);
         const productContainer = document.querySelector('.products');
-
+       
         products.forEach(product => {
-            if (product.gender.toLowerCase() === 'female') {
+            if (product.gender.toLowerCase() === 'male') { 
                 product.quantity = 1;
                 productContainer.innerHTML +=
                     `
@@ -31,6 +32,7 @@ const displayWomenProducts = async () => {
                         <h2>${product.title}</h2>
                         <p>${product.description}</p>
                         <a href="../product/index.html?id=${product.id}">
+
                         <img src="${product.image}" alt="${product.title}">
                     </a>
                         <div class="product-price">$${product.price.toFixed(2)}</div>
@@ -44,7 +46,6 @@ const displayWomenProducts = async () => {
         hideLoadingIndicator();
     }
 }
-
 function showLoadingIndicator() {
     const loadingIndicator = document.querySelector('.loading');
     loadingIndicator.classList.add('show');
@@ -53,9 +54,8 @@ function hideLoadingIndicator() {
     const loadingIndicator = document.querySelector('.loading');
     loadingIndicator.classList.remove('show');
 }
-
 document.addEventListener('DOMContentLoaded', () => {
-    displayWomenProducts();
+    displayMenProducts();
 });
 
 
