@@ -333,15 +333,7 @@ a:hover{
 }
 
 .loading {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(227, 231, 227, 0.8);
-  padding: 10px;
-  border-radius: 5px;
-  z-index: 1000;
+text-align: center;
 }
 .loading {
   display: none;

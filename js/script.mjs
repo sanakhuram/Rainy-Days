@@ -22,8 +22,8 @@ const fetchProducts = async (url) => {
 const displayProducts = async () => {
     try {
 
-        showLoadingIndicator();
-        products = await fetchProducts(URL);
+        const data = await fetchProducts(URL);
+        products = data;
         const productContainer = document.querySelector('.products');
 
         products.forEach(product => {
@@ -57,6 +57,7 @@ function hideLoadingIndicator() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    displayProducts();
+    showLoadingIndicator();
+    setTimeout(displayProducts, 2000);
 });
 
