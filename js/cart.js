@@ -1,9 +1,11 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     const cartList = document.querySelector('.cart-list');
     const totalContainer = document.querySelector('.total');
     const loadingIndicator = document.querySelector('.loading');
     const checkoutButton = document.querySelector('.checkout-button');
-    
+
     let cartArray = []; 
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cartList.innerHTML = "";
         let total = 0;
 
-        loadingIndicator.style.display = 'block'; 
+        loadingIndicator.classList.add('show'); // Show loading spinner
 
         setTimeout(() => { 
             cartItems.forEach(function (cartElement) {
@@ -37,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
             
-            loadingIndicator.style.display = 'none';
+            loadingIndicator.classList.remove('show'); // Hide loading spinner
         }, 1000);
     }
     
@@ -66,9 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 showCart(cartArray);
                 localStorage.setItem('cart', JSON.stringify(cartArray));
             }
-            else if (event.target === checkoutButton) {
-                alert('Your order is being processed.');
-            }
+        } else if (event.target === checkoutButton) {
+            alert('Your order is being processed.');
         }
     });
 });
+
+
