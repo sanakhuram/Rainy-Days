@@ -19,7 +19,6 @@ const fetchProducts = async (url) => {
 const displayMenProducts = async () => {
     try {
         
-        showLoadingIndicator();
         products = await fetchProducts(URL);
         const productContainer = document.querySelector('.products');
        
@@ -54,8 +53,26 @@ function hideLoadingIndicator() {
     const loadingIndicator = document.querySelector('.loading');
     loadingIndicator.classList.remove('show');
 }
+
+
 document.addEventListener('DOMContentLoaded', () => {
-    displayMenProducts();
+    showLoadingIndicator();
+    setTimeout(displayMenProducts, 1000);
 });
 
+function updateCartCount() {
+    const cartCountElement = document.getElementById('cart-count'); 
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let currentCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    cartCountElement.textContent = `CART(${currentCount})`;
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+});
+
+window.addEventListener('storage', (event) => {
+    if (event.key === 'cart') {
+        updateCartCount();
+    }
+});

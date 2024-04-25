@@ -1,73 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This page aims to show collection of women Jackets">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Collection of Women Jackets, Prices and Specifications"
+    />
     <title>Women Collection</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" type="image/png" href="../assets/favicon-32x32.png" />
     <script type="module" src="../js/womencollection.mjs"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header id="main-header">
-        <div id="logo-wrapper">
-            <a href="../index.html">
-                <img src="../assets/RainyDays_Logo.png" alt="logo of RainyDays." class="image-logo">
-            </a>
-        </div>
-        <div>
-            <nav id="main-nav">
-                <label class="hamburger-icon" for="hamburger">
-                    <span class="visually-hidden">Menu hamburger bars</span>
-                    <img src="../assets/Hamburger-menu.png" alt="Menu hamburger bars" class="hamburger-icon">
-                </label>
-                <input id="hamburger" type="checkbox">
+      <div id="logo-wrapper">
+        <a href="../index.html">
+          <img
+            src="../assets/RainyDays_Logo.png"
+            alt="logo of RainyDays."
+            class="image-logo"
+          />
+        </a>
+      </div>
+      <div>
+        <nav id="main-nav">
+          <label class="hamburger-icon" for="hamburger">
+            <span class="visually-hidden">Menu hamburger bars</span>
+            <img
+              src="../assets/Hamburger-menu.png"
+              alt="Menu hamburger bars"
+              class="hamburger-icon"
+            />
+          </label>
+          <input id="hamburger" type="checkbox" />
 
-                <ul id="main-menu">
-                    <li><a href="../html/MenCollection.html">MEN</a></li>
-                    <li class="active"><a href="../html/WomenCollection.html">WOMEN</a></li>
-                    <li><a href="../html/AboutUs.html">ABOUT</a></li>
-                    <li><a href="../html/Privacy&Terms.html">CONTACT</a></li>
-                    <li><a href="../basket/cart/index.html">CART(0)</a></li>
-                </ul>
-            </nav>
-        </div>
+          <ul id="main-menu">
+            <li><a href="../html/MenCollection.html">MEN</a></li>
+            <li class="active">
+              <a href="../html/WomenCollection.html">WOMEN</a>
+            </li>
+            <li><a href="../html/AboutUs.html">ABOUT</a></li>
+            <li><a href="../html/Privacy&Terms.html">CONTACT</a></li>
+            <li>
+              <a href="../basket/cart/index.html" id="cart-count">CART(0)</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <section id="banner">
-        <img src="../assets/collection-women.jpg"
-            alt="A female nature lover dressed in a red jacket, wandering in the meadows with her pet dog on a cloudy day"
-            class="image-banner">
-        <h1>Explore Our Women Collection</h1>
+      <img
+        src="../assets/collection-women.jpg"
+        alt="A female nature lover dressed in a red jacket, wandering in the meadows with her pet dog on a cloudy day"
+        class="image-banner"
+      />
+      <h1>Explore Our Women Collection</h1>
     </section>
 
     <div class="loading">Loading...</div>
     <div class="products"></div>
-    
-
 
     <footer>
-        <div class="footer-wrapper">
-            <div class="footer-section">
-                <p>Follow Us:</p>
-                <div class="social-icons">
-                    <img src="../assets/facebook-logo_icon.png" alt="Facebook Logo">
-                    <img src="../assets/twitter_icon.png" alt="Twitter Logo">
-                    <img src="../assets/instagram_icon.png" alt="Instagram Logo">
-                </div>
-            </div>
-            <div class="footer-section">
-                <img src="../assets/RainyDays_Logo.png" alt="RainyDays Logo">
-            </div>
-            <div class="terms-privacy">
-                <h3><a href="../html/Privacy&Terms.html">Terms & Conditions</a></h3>
-                <p>© 2024 Rainy Days. All Rights Reserved.</p>
-            </div>
+      <div class="footer-wrapper">
+        <div class="footer-section">
+          <p>Follow Us:</p>
+          <div class="social-icons">
+            <img src="../assets/facebook-logo_icon.png" alt="Facebook Logo" />
+            <img src="../assets/twitter_icon.png" alt="Twitter Logo" />
+            <img src="../assets/instagram_icon.png" alt="Instagram Logo" />
+          </div>
         </div>
+        
+        <div class="footer-section">
+          <a href="../index.html">
+            <img src="../assets/RainyDays_Logo.png" alt="RainyDays Logo">
+        </a>
+        </div>
+        <div class="terms-privacy">
+          <h3><a href="../html/Privacy&Terms.html">Terms & Conditions</a></h3>
+          <p>© 2024 Rainy Days. All Rights Reserved.</p>
+        </div>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>

@@ -334,6 +334,10 @@ a:hover{
 
 .loading {
 text-align: center;
+font-weight: bold;
+color: rgb(25, 75, 25);
+font-size: 24px;
+background-color:  hwb(95 58% 33%);
 }
 .loading {
   display: none;
@@ -342,6 +346,7 @@ text-align: center;
 .loading.show {
   display: block;
 }
+
 
 
 

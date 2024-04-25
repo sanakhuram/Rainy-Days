@@ -61,3 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(displayProducts, 2000);
 });
 
+function updateCartCount() {
+    const cartCountElement = document.getElementById('cart-count'); // Remove the dot
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let currentCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    cartCountElement.textContent = `CART(${currentCount})`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount();
+});
+
+window.addEventListener('storage', (event) => {
+    if (event.key === 'cart') {
+        updateCartCount();
+    }
+});
+
