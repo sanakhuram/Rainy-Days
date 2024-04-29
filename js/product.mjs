@@ -56,80 +56,52 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function addToCartClicked(event) {
-    const button = event.target;
-    const productId = button.dataset.productId;
-    const title = button.dataset.title;
-    const image = button.dataset.image;
-    const price = button.dataset.price;
+    const { target: button } = event;
+    const { productId, title, image, price } = button.dataset;
     addToCart(productId, title, image, price);
     updateCartCount();
 }
 
+
 function addToCart(productId, title, image, price) {
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     const existingItemIndex = cartItems.findIndex(item => item.id === productId);
-    if (existingItemIndex !== -1) {
-        cartItems[existingItemIndex].quantity++;
-    } else {
-        cartItems.push({ 
-            id: productId, 
-            title: title, 
-            image: image, 
-            price: price, 
-            quantity: 1 
-        });
-    }
+    existingItemIndex !== -1 ? cartItems[existingItemIndex].quantity++ : cartItems.push({ id: productId, title, image, price, quantity: 1 });
     localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
 function updateCartCount() {
     const cartCountElement = document.querySelector('.cart-count');
+    const cartDropdown = document.querySelector('.cart-dropdown .dropdown-content');
+
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    let currentCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-    cartCountElement.textContent = `CART(${currentCount})`;
+    let totalPrice = 0;
 
-    const cartDropdown = document.querySelector('.cart-dropdown');
-    const dropdownContent = document.querySelector('.dropdown-content');
-
-    dropdownContent.innerHTML = '';
+    cartDropdown.innerHTML = '';
 
     cartItems.forEach(item => {
         const cartItemDiv = document.createElement('div');
         cartItemDiv.classList.add('cart-item');
-
-        const imageDiv = document.createElement('div');
-        const image = document.createElement('img');
-        image.src = item.image;
-        image.alt = item.title;
-        image.style.width = '70px';
-        image.style.borderRadius = '0 10px 10px 0'; 
-        imageDiv.appendChild(image);
-        cartItemDiv.appendChild(imageDiv);
-
+        cartItemDiv.innerHTML = `
+            <div>
+                <img src="${item.image}" alt="${item.title}" style="width: 70px; border-radius: 0 10px 10px 0;">
+            </div>
+            <div class="item-info">
+                <p style="font-size: 14px;">${item.title}</p>
+                <p style="font-size: 12px;">Quantity: ${item.quantity}</p>
+            </div>
+        `;
+        cartDropdown.appendChild(cartItemDiv);
         
-        const infoDiv = document.createElement('div');
-        infoDiv.classList.add('item-info');
-
-        const titleNode = document.createElement('p');
-        titleNode.textContent = item.title;
-        titleNode.style.fontSize = '14px'; 
-        infoDiv.appendChild(titleNode);
-
-        const quantityNode = document.createElement('p');
-        quantityNode.textContent = `Quantity: ${item.quantity}`;
-        quantityNode.style.fontSize = '12px'; 
-        infoDiv.appendChild(quantityNode);
-
-        cartItemDiv.appendChild(infoDiv);
-
-        dropdownContent.appendChild(cartItemDiv);
+        totalPrice += item.price * item.quantity; 
     });
 
-    const totalPrice = cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+    cartCountElement.textContent = `CART(${cartItems.reduce((total, item) => total + item.quantity, 0)})`;
+
     const totalDiv = document.createElement('div');
     totalDiv.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
-    dropdownContent.appendChild(totalDiv);
+    cartDropdown.appendChild(totalDiv);
 }
-document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount(); 
-});
+
+document.addEventListener('DOMContentLoaded', updateCartCount);
+

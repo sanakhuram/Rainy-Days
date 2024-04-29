@@ -43,8 +43,3 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
 });
 
-window.addEventListener('storage', (event) => {
-    if (event.key === 'cart') {
-        updateCartCount();
-    }
-});

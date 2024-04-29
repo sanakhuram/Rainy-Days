@@ -29,3 +29,10 @@ export function updateCartCount() {
     let currentCount = cartItems.reduce((total, item) => total + item.quantity, 0);
     cartCountElement.textContent = `CART(${currentCount})`;
 }
+
+
+window.addEventListener('storage', (event) => {
+    if (event.key === 'cart') {
+        updateCartCount();
+    }
+});
