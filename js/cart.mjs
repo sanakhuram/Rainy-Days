@@ -1,3 +1,5 @@
+import { URL } from "./constants.mjs";
+import { fetchData, showLoadingIndicator, hideLoadingIndicator } from './utils.mjs';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -6,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadingIndicator = document.querySelector('.loading');
     const checkoutButton = document.querySelector('.checkout-button');
 
-    let cartArray = []; 
+    let cartArray = [];
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
         cartArray = JSON.parse(storedCart);
@@ -17,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         cartList.innerHTML = "";
         let total = 0;
 
-        loadingIndicator.classList.add('show'); 
+        loadingIndicator.classList.add('show');
 
-        setTimeout(() => { 
+        setTimeout(() => {
             cartItems.forEach(function (cartElement) {
                 cartList.innerHTML +=
                     `
@@ -38,11 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
-            
-            loadingIndicator.classList.remove('show'); 
+
+            loadingIndicator.classList.remove('show');
         }, 1000);
     }
-    
+
     document.addEventListener('click', (event) => {
         if (event.target.classList.contains('increment-button')) {
             const productId = event.target.dataset.product;

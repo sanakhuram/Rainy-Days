@@ -1,28 +1,13 @@
-
-
-
 import { URL } from './constants.mjs';
+import { fetchData, showLoadingIndicator, hideLoadingIndicator, updateCartCount } from './utils.mjs';
+
 let products = [];
-
-
-const fetchProducts = async (url) => {
-    try {
-        const response = await fetch(url);
-        if (response.ok) {
-            const data = await response.json();
-            return data;
-        } else {
-            throw new Error("Network response was not ok");
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
 
 const displayProducts = async () => {
     try {
+        showLoadingIndicator();
 
-        const data = await fetchProducts(URL);
+        const data = await fetchData(URL);
         products = data;
         const productContainer = document.querySelector('.products');
 
@@ -39,6 +24,7 @@ const displayProducts = async () => {
                 </div>
                 `;
         });
+
         hideLoadingIndicator();
     } catch (error) {
         console.error(error);
@@ -46,29 +32,10 @@ const displayProducts = async () => {
     }
 }
 
-function showLoadingIndicator() {
-    const loadingIndicator = document.querySelector('.loading');
-    loadingIndicator.classList.add('show');
-}
-function hideLoadingIndicator() {
-    const loadingIndicator = document.querySelector('.loading');
-    loadingIndicator.classList.remove('show');
-}
-
-
 document.addEventListener('DOMContentLoaded', () => {
     showLoadingIndicator();
     setTimeout(displayProducts, 2000);
-});
 
-function updateCartCount() {
-    const cartCountElement = document.getElementById('cart-count'); // Remove the dot
-    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    let currentCount = cartItems.reduce((total, item) => total + item.quantity, 0);
-    cartCountElement.textContent = `CART(${currentCount})`;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
 });
 
@@ -77,4 +44,3 @@ window.addEventListener('storage', (event) => {
         updateCartCount();
     }
 });
-

@@ -1,6 +1,7 @@
 
 import { URL } from "./constants.mjs";
 
+
 const url = document.location;
 const search = url.search;
 const params = new URLSearchParams(search);
@@ -129,3 +130,6 @@ function updateCartCount() {
     totalDiv.textContent = `Total Price: $${totalPrice.toFixed(2)}`;
     dropdownContent.appendChild(totalDiv);
 }
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartCount(); 
+});
