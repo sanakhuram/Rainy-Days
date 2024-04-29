@@ -46,34 +46,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('click', (event) => {
-        if (event.target.classList.contains('increment-button')) {
-            const productId = event.target.dataset.product;
-            const cartItem = cartArray.find(item => item.id === productId);
-            if (cartItem) {
-                cartItem.quantity++;
-                showCart(cartArray);
-                localStorage.setItem('cart', JSON.stringify(cartArray));
-            }
-        } else if (event.target.classList.contains('decrement-button')) {
-            const productId = event.target.dataset.product;
-            const cartItem = cartArray.find(item => item.id === productId);
-            if (cartItem && cartItem.quantity > 1) {
-                cartItem.quantity--;
-                showCart(cartArray);
-                localStorage.setItem('cart', JSON.stringify(cartArray));
-            }
-        } else if (event.target.classList.contains('remove-button')) {
-            const productId = event.target.dataset.product;
-            const cartItemIndex = cartArray.findIndex(item => item.id === productId);
-            if (cartItemIndex !== -1) {
-                cartArray.splice(cartItemIndex, 1);
-                showCart(cartArray);
-                localStorage.setItem('cart', JSON.stringify(cartArray));
-            }
+        const targetClassList = event.target.classList;
+        const productId = event.target.dataset.product;
+    
+        if (targetClassList.contains('increment-button')) {
+            adjustCartItemQuantity(productId, 1);
+        } else if (targetClassList.contains('decrement-button')) {
+            adjustCartItemQuantity(productId, -1);
+        } else if (targetClassList.contains('remove-button')) {
+            removeCartItem(productId);
         } else if (event.target === checkoutButton) {
             alert('Your order is being processed.');
         }
     });
-});
+    
+    function adjustCartItemQuantity(productId, change) {
+        const cartItem = cartArray.find(item => item.id === productId);
+        if (cartItem) {
+            cartItem.quantity += change;
+            showCart(cartArray);
+            localStorage.setItem('cart', JSON.stringify(cartArray));
+        }
+    }
+    
+    function removeCartItem(productId) {
+        const cartItemIndex = cartArray.findIndex(item => item.id === productId);
+        if (cartItemIndex !== -1) {
+            cartArray.splice(cartItemIndex, 1);
+            showCart(cartArray);
+            localStorage.setItem('cart', JSON.stringify(cartArray));
+        }
+    }
+    
+    });
+
 
 
