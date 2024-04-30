@@ -6,10 +6,10 @@
 .products {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 40px;
     justify-content: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
+    margin-bottom: 40px;
+    margin-top: 40px;
 }
 
 /* Style for individual product card */
@@ -23,6 +23,8 @@
 
 .product:hover {
     background-color: hwb(95 41% 51%);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(25, 26, 25, 0.952);
 }
 
 .product h2 {
@@ -321,8 +323,6 @@ h1 {
 visibility: visible; 
 }
 }
-
-
 
 
 .message-container {
