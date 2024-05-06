@@ -58,27 +58,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (event.target === checkoutButton) {
             alert('Your order is being processed.');
         }
+        localStorage.removeItem('cart');
+        showCart([]);
     });
     
-    function adjustCartItemQuantity(productId, change) {
-        const cartItem = cartArray.find(item => item.id === productId);
-        if (cartItem) {
-            cartItem.quantity += change;
-            showCart(cartArray);
-            localStorage.setItem('cart', JSON.stringify(cartArray));
-        }
-    }
-    
-    function removeCartItem(productId) {
-        const cartItemIndex = cartArray.findIndex(item => item.id === productId);
-        if (cartItemIndex !== -1) {
-            cartArray.splice(cartItemIndex, 1);
-            showCart(cartArray);
-            localStorage.setItem('cart', JSON.stringify(cartArray));
-        }
-    }
-    
-    });
+});
 
 
 

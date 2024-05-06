@@ -204,6 +204,27 @@ li.active  {
   gap: 10px;
   margin-bottom: 20px;
 }
+.filter-buttons{
+  text-align: center;
+  
+}
+.filter-button{
+  background-color: orange;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+}
+.filter-button{
+  margin-bottom: 20px;
+}
+.filter-button.active {
+  background-color: red;
+  color: white;
+}
 
 .button {
   background-color: orange;

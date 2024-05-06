@@ -9,11 +9,22 @@ const displayProducts = async () => {
 
         const data = await fetchData(URL);
         products = data;
-        const productContainer = document.querySelector('.products');
+        renderProducts(products);
 
-        products.forEach(product => {
-            productContainer.innerHTML +=
-                `
+        hideLoadingIndicator();
+    } catch (error) {
+        console.error(error);
+        hideLoadingIndicator();
+    }
+}
+
+const renderProducts = (productsToRender) => {
+    const productContainer = document.querySelector('.products');
+    productContainer.innerHTML = "";
+
+    productsToRender.forEach(product => {
+        productContainer.innerHTML +=
+            `
                 <div class="product" data-product-id="${product.id}">
                     <h2>${product.title}</h2>
                     <p>${product.description}</p>
@@ -23,13 +34,16 @@ const displayProducts = async () => {
                     <div class="product-price">$${product.price.toFixed(2)}</div>
                 </div>
                 `;
-        });
+    });
 
-        hideLoadingIndicator();
-    } catch (error) {
-        console.error(error);
-        hideLoadingIndicator();
-    }
+}
+const filteredProducts = (gender) => {
+    console.log("Filter Value:", gender);
+    const filteredProducts = products.filter(product => {
+        return gender === "all" || product.gender.toLowerCase() === gender;
+    });
+    console.log("Filtered Products:", filteredProducts.length);
+    renderProducts(filteredProducts);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,6 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(displayProducts, 2000);
 
     updateCartCount();
+        
+    const filterButtons = document.querySelectorAll(".filter-button");
+    
+filterButtons.forEach(button => {
+    button.addEventListener("click", function () {
+        const filterValue = this.dataset.filter;
+        filteredProducts(filterValue);
+
+
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        this.classList.add("active");
+    });
+    });
 });
-
-
