@@ -13,8 +13,7 @@ const displayMenProducts = async () => {
         products.forEach(product => {
             if (product.gender.toLowerCase() === 'male') {
                 product.quantity = 1;
-                productContainer.innerHTML +=
-                    `
+                productContainer.innerHTML += `
                     <div class="product" data-product-id="${product.id}">
                         <h2>${product.title}</h2>
                         <p>${product.description}</p>
@@ -23,7 +22,7 @@ const displayMenProducts = async () => {
                         </a>
                         <div class="product-price">$${product.price.toFixed(2)}</div>
                     </div>
-                    `;
+                `;
             }
         });
 
@@ -36,11 +35,9 @@ const displayMenProducts = async () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     showLoadingIndicator();
-    setTimeout(displayMenProducts, 1000);
+    displayMenProducts();  // Call the function immediately without delay
 });
 
 document.addEventListener('DOMContentLoaded', () => {
     updateCartCount();
 });
-
-

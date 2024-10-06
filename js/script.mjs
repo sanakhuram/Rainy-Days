@@ -23,45 +23,43 @@ const renderProducts = (productsToRender) => {
     productContainer.innerHTML = "";
 
     productsToRender.forEach(product => {
-        productContainer.innerHTML +=
-            `
-                <div class="product" data-product-id="${product.id}">
-                    <h2>${product.title}</h2>
-                    <p>${product.description}</p>
-                    <a href="product/index.html?id=${product.id}">
-                        <img src="${product.image}" alt="${product.title}">
-                    </a>
-                    <div class="product-price">$${product.price.toFixed(2)}</div>
-                </div>
-                `;
+        productContainer.innerHTML += `
+            <div class="product" data-product-id="${product.id}">
+                <h2>${product.title}</h2>
+                <p>${product.description}</p>
+                <a href="product/index.html?id=${product.id}">
+                    <img src="${product.image}" alt="${product.title}">
+                </a>
+                <div class="product-price">$${product.price.toFixed(2)}</div>
+            </div>
+        `;
     });
-
 }
+
 const filteredProducts = (gender) => {
     console.log("Filter Value:", gender);
-    const filteredProducts = products.filter(product => {
+    const filtered = products.filter(product => {
         return gender === "all" || product.gender.toLowerCase() === gender;
     });
-    console.log("Filtered Products:", filteredProducts.length);
-    renderProducts(filteredProducts);
+    console.log("Filtered Products:", filtered.length);
+    renderProducts(filtered);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     showLoadingIndicator();
-    setTimeout(displayProducts, 2000);
+    displayProducts();  // Removed the setTimeout and called it immediately
 
     updateCartCount();
-        
+    
     const filterButtons = document.querySelectorAll(".filter-button");
     
-filterButtons.forEach(button => {
-    button.addEventListener("click", function () {
-        const filterValue = this.dataset.filter;
-        filteredProducts(filterValue);
+    filterButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            const filterValue = this.dataset.filter;
+            filteredProducts(filterValue);
 
-
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
-    });
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+        });
     });
 });

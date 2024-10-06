@@ -1,6 +1,4 @@
-
 import { URL } from "./constants.mjs";
-
 
 const url = document.location;
 const search = url.search;
@@ -28,9 +26,15 @@ async function renderSingleProduct() {
         const id = params.get('id');
         const singleData = await fetchSingleProduct(id);
         const productDetails = document.getElementById("product-details");
+
+        if (!singleData) {
+            productDetails.innerHTML = '<p>Product not found.</p>';
+            return;
+        }
+
         productDetails.innerHTML = `
             <div class="product-image">
-                <img src="${singleData.image}" alt="${singleData.title}">
+                <img src="${singleData.image}" alt="${singleData.title}" loading="lazy">
             </div>
             <div class="product-info">
                 <h2>${singleData.title}</h2>
@@ -39,7 +43,7 @@ async function renderSingleProduct() {
                 <p><strong>Available Sizes:</strong> ${singleData.sizes.join(', ')}</p>
                 <p><strong>Base Color:</strong> ${singleData.baseColor}</p>
                 <p><strong>Price:</strong> $${singleData.price.toFixed(2)}</p>
-               <p><strong style=color:red;>Discounted Price:</strong> $${singleData.discountedPrice.toFixed(2)}</p>
+                <p><strong style=color:red;>Discounted Price:</strong> $${singleData.discountedPrice.toFixed(2)}</p>
                 <button class="add-to-cart-button" data-product-id="${singleData.id}" data-title="${singleData.title}" data-image="${singleData.image}" data-price="${singleData.price.toFixed(2)}">Add to Cart</button>
             </div>
         `;
@@ -62,17 +66,24 @@ function addToCartClicked(event) {
     updateCartCount();
 }
 
-
 function addToCart(productId, title, image, price) {
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const existingItemIndex = cartItems.findIndex(item => item.id === productId);
-    existingItemIndex !== -1 ? cartItems[existingItemIndex].quantity++ : cartItems.push({ id: productId, title, image, price, quantity: 1 });
+    const existingItem = cartItems.find(item => item.id === productId);
+    
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cartItems.push({ id: productId, title, image, price, quantity: 1 });
+    }
+
     localStorage.setItem('cart', JSON.stringify(cartItems));
 }
 
 function updateCartCount() {
     const cartCountElement = document.querySelector('.cart-count');
     const cartDropdown = document.querySelector('.cart-dropdown .dropdown-content');
+
+    if (!cartCountElement || !cartDropdown) return;
 
     let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     let totalPrice = 0;
@@ -104,4 +115,3 @@ function updateCartCount() {
 }
 
 document.addEventListener('DOMContentLoaded', updateCartCount);
-
