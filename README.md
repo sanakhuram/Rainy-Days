@@ -66,7 +66,7 @@ Once running, users can browse jackets, add items to their cart, and proceed to 
 
 Feel free to reach out for questions, suggestions, or feedback:
 
-- **🔗 [LinkedIn](www.linkedin.com/in/sana-khuram-157ba02b7)**
+- **🔗 [LinkedIn](https://www.linkedin.com/in/sana-khuram-157ba02b7/)**
 
 ---
 
