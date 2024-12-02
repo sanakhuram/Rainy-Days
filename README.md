@@ -3,7 +3,7 @@
 ![Screenshot 2024-12-02 104607](https://github.com/user-attachments/assets/5e933aab-2abf-44bf-8198-066c1ea55c8b)
 
 
-Welcome to **RainyDays**, a responsive e-commerce website! This project integrates with the Noroff API to offer a wide selection of jackets for men and women. The goal is to create an accessible, functional, and responsive website where users can explore jackets, add them to their cart, and proceed to checkout.
+🍂 Welcome to **RainyDays**, a responsive e-commerce website! This project integrates with the Noroff API to offer a wide selection of jackets for men and women. The goal is to create an accessible, functional, and responsive website where users can explore jackets, add them to their cart, and proceed to checkout.
 
 ---
 
