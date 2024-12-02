@@ -43,11 +43,11 @@ Follow these steps to set up the project locally:
 ### Installing:
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/sanakhuram/squareEyes-js.git
+   git clone [https://github.com/sanakhuram/squareEyes-js.git](https://github.com/sanakhuram/Rainy-Days)
    ```
 2. **Navigate to the project directory:**
    ```bash
-   cd squareEyes-js
+   cd Rainy-Days
    ```
 3. **Install dependencies (if applicable):** Ensure all necessary packages are installed.
 
