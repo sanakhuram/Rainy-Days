@@ -35,7 +35,7 @@ const displayMenProducts = async () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     showLoadingIndicator();
-    displayMenProducts();  // Call the function immediately without delay
+    displayMenProducts();  
 });
 
 document.addEventListener('DOMContentLoaded', () => {

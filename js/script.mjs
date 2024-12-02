@@ -47,7 +47,7 @@ const filteredProducts = (gender) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     showLoadingIndicator();
-    displayProducts();  // Removed the setTimeout and called it immediately
+    displayProducts();  
 
     updateCartCount();
     
